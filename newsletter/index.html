@@ -322,6 +322,22 @@
     }
     .toc a.toc-essay { grid-column: 1 / -1 !important; }
 
+  
+    .motif-band {
+      display: block;
+      width: 100%;
+      max-height: 160px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 0 0 6px;
+      border: 1px solid var(--line);
+    }
+    .motif-band svg { display: block; width: 100%; height: 140px; }
+    @media (max-width: 559px) {
+      .motif-band svg { height: 120px; }
+    }
+    .motif-credit { margin-top: 0; }
+
   </style>
 </head>
 <body>
@@ -364,13 +380,13 @@
           <span class="box-title">World density</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
-      </summary>
-      <div class="box-panel">
-        <figure class="box-figure">
+      <figure class="box-figure">
         <img class="box-media" src="img/factory-floor.jpg" alt="Factory floor" loading="lazy" />
-        <span class="img-credit">Photo: Unsplash · Free to use under the Unsplash License</span>
         <figcaption class="photo-credit">Photo: Unsplash · Free to use under the Unsplash License</figcaption>
       </figure>
+      </summary>
+      <div class="box-panel">
+        
         <div class="chapter-body">
 <p>Global robot density rose again in 2024: 177 industrial robots for every 10,000 people employed in manufacturing, up from 163 the year before. That is not a tech headline. It is a factory baseline.</p>
 <p>The same IFR Foreword frame shows how busy the floor stayed. New installations worldwide reached <strong>542,076</strong> in 2024 (+0.1% versus 2023), while the operational stock hit <strong>4,663,773</strong> (+8.9%). Orders can flatten; the installed base keeps working. Top densities in the same year underline how far "normal" has moved: Korea <strong>1,220</strong>, Singapore <strong>818</strong>, China <strong>567</strong>, Germany <strong>449</strong>, Japan <strong>446</strong> per 10,000 manufacturing employees.</p>
@@ -392,13 +408,13 @@
           <span class="box-title">China vs world</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
-      </summary>
-      <div class="box-panel">
-        <figure class="box-figure">
+      <figure class="box-figure">
         <img class="box-media" src="img/robot-arm.jpg" alt="Industrial robot arm" loading="lazy" />
-        <span class="img-credit">Photo: Unsplash · Free to use under the Unsplash License</span>
         <figcaption class="photo-credit">Photo: Unsplash · Free to use under the Unsplash License</figcaption>
       </figure>
+      </summary>
+      <div class="box-panel">
+        
         <div class="chapter-body">
 <p>China's manufacturing robot density is <strong>567</strong> per 10,000 employees. Against the world average of 177, that is roughly <strong>3.2x</strong>. Same year. Same IFR frame. No mystery arithmetic.</p>
 <p>Scale shows up in deployments too. In 2024 China accounted for <strong>54%</strong> of global robot deployments, about <strong>295,045</strong> installations (a record). Its operational stock sat above <strong>2,027,000</strong>. Domestic suppliers took <strong>57%</strong> of that market (up from about <strong>28%</strong> a decade earlier; year-on-year the domestic share moved <strong>47% to 57%</strong>). High density plus a huge install pipeline means more plants running repeatable processes, more maintenance muscle, and more vendors competing on uptime. That compounds.</p>
@@ -419,13 +435,13 @@
           <span class="box-title">Elec over auto</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
-      </summary>
-      <div class="box-panel">
-        <figure class="box-figure">
+      <figure class="box-figure">
         <img class="box-media" src="img/cnc-metal.jpg" alt="CNC metalwork" loading="lazy" />
-        <span class="img-credit">Photo: Unsplash · Free to use under the Unsplash License</span>
         <figcaption class="photo-credit">Photo: Unsplash · Free to use under the Unsplash License</figcaption>
       </figure>
+      </summary>
+      <div class="box-panel">
+        
         <div class="chapter-body">
 <p>In 2024, electronics again overtook automotive as the larger buyer of new industrial robot installations, <strong>128,899</strong> against <strong>126,088</strong> (gap about <strong>2,800</strong> units). As shares of global installs, electronics was <strong>24%</strong> (+1 percentage point) and automotive <strong>23%</strong> (-2 pp). Metal and machinery sat third at <strong>16%</strong> (+2 pp). It was the fourth straight year above <strong>500,000</strong> new installations worldwide. By region, Asia took <strong>74%</strong> of new deployments, Europe <strong>16%</strong>, the Americas <strong>9%</strong>.</p>
 <p>Automation follows the supply chains that are moving, not only the plants with the longest history. Electronics cycles are fast, mix is messy, and quality gates are merciless.</p>
@@ -448,13 +464,12 @@
           <span class="box-title">AI size gap</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
+      <div class="box-motif-band motif-ai" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="64" height="64"><rect x="6" y="34" width="18" height="20" rx="2" fill="none" stroke="#181818" stroke-width="2"/><rect x="32" y="8" width="24" height="46" rx="2" fill="none" stroke="#181818" stroke-width="2"/><path d="M38 18h12M38 28h12M38 38h12" stroke="#181818" stroke-width="2"/><circle cx="15" cy="44" r="3" fill="#FFBD00"/></svg>
+      </div>
       </summary>
       <div class="box-panel">
-        <figure class="box-figure">
-        <img class="box-media" src="img/factory-floor.jpg" alt="Factory floor" loading="lazy" />
-        <span class="img-credit">Photo: Unsplash · Free to use under the Unsplash License</span>
-        <figcaption class="photo-credit">Photo: Unsplash · Free to use under the Unsplash License</figcaption>
-      </figure>
+        
         <div class="chapter-body">
 <p>Only about <strong>12%</strong> of Australian businesses used AI in 2024-25. Dig one layer deeper and the story sharpens: roughly <strong>35%</strong> of large firms versus about <strong>11%</strong> of small and micro. That is ~<strong>3.2x</strong>, an adoption gap by size, not by slogan. Medium firms sat near <strong>~22%</strong> (versus <strong>3%</strong> in 2021-22). Large firms moved from about <strong>9%</strong> to <strong>35%</strong> over that stretch. Innovation-active businesses used AI at <strong>20%</strong> versus <strong>6%</strong> for the rest. <strong>46%</strong> of businesses were innovation-active. Top sectors included information/media/telecom at <strong>38%</strong>, and professional scientific services and finance at <strong>24%</strong> each (ABS media 25 Jun 2026 and Technology & innovation hub, FY 2024-25 BCS window).</p>
 <p>Mid-market organisations sit in the uncomfortable middle: too complex to ignore the tools, too lean to absorb failed experiments. The failure mode is familiar, buy a licence, skip the process redesign, declare "AI" done. The ABS split should make boards ask a colder question: are we building capability, or renting novelty?</p>
@@ -475,13 +490,12 @@
           <span class="box-title">AU IVA lift</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
+      <div class="box-motif-band motif-iva" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="64" height="64"><path d="M8 48h48" stroke="#181818" stroke-width="2"/><path d="M12 40l12-14 10 8 16-20" fill="none" stroke="#181818" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 14h10v10" fill="none" stroke="#FFBD00" stroke-width="2.5"/><rect x="14" y="40" width="8" height="8" fill="#FFBD00"/></svg>
+      </div>
       </summary>
       <div class="box-panel">
-        <figure class="box-figure">
-        <img class="box-media" src="img/robot-arm.jpg" alt="Industrial robot arm" loading="lazy" />
-        <span class="img-credit">Photo: Unsplash · Free to use under the Unsplash License</span>
-        <figcaption class="photo-credit">Photo: Unsplash · Free to use under the Unsplash License</figcaption>
-      </figure>
+        
         <div class="chapter-body">
 <p>Australian manufacturing industry value added rose by about <strong>A$6.2 billion</strong> in absolute terms between 2023-24 and 2024-25 (A$141,973m after A$135,724m), a <strong>+4.6%</strong> lift. Employment at end of June sat near <strong>901,000</strong>, up <strong>0.2%</strong> on the prior year. This is not a eulogy for manufacturing. It is evidence the sector still moves both money and labour: value and headcount edged up together.</p>
 <p>Growth without modernisation is fragile. Rising IVA can hide ageing assets, overtime dependency, and quality variance that customers will eventually price. The optimistic reading is capacity and demand. The disciplined reading is: use the lift to fund the boring upgrades, sensing, data, robotics, while cash flow still supports them.</p>
@@ -502,13 +516,12 @@
           <span class="box-title">Thin GDP share</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
+      <div class="box-motif-band motif-gdp" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="64" height="64"><rect x="8" y="28" width="48" height="12" rx="2" fill="none" stroke="#181818" stroke-width="2"/><rect x="8" y="28" width="10" height="12" rx="2" fill="#FFBD00"/><text x="32" y="22" text-anchor="middle" font-family="PT Mono, monospace" font-size="10" fill="#181818">5.4%</text></svg>
+      </div>
       </summary>
       <div class="box-panel">
-        <figure class="box-figure">
-        <img class="box-media" src="img/cnc-metal.jpg" alt="CNC metalwork" loading="lazy" />
-        <span class="img-credit">Photo: Unsplash · Free to use under the Unsplash License</span>
-        <figcaption class="photo-credit">Photo: Unsplash · Free to use under the Unsplash License</figcaption>
-      </figure>
+        
         <div class="chapter-body">
 <p>Manufacturing is about <strong>5.4%</strong> of Australian GDP (2024). Germany sits near <strong>18.0%</strong>; China near <strong>24.8%</strong>. We are not a factory economy. That is structural, resources, services, geography, not a moral failing.</p>
 <p>Even thick factory economies invest in cycles. In 2024 Europe installed about <strong>85,006</strong> industrial robots (-8%), of which the EU was roughly <strong>80%</strong>. Germany alone installed <strong>26,982</strong> (-5%), about <strong>32%</strong> of Europe's total. A deep industrial base does not freeze capital spending; it adjusts it.</p>
