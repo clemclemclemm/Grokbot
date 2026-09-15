@@ -197,7 +197,7 @@
       line-height: 1.1;
       letter-spacing: -0.02em;
     }
-    .stat .accent { color: var(--yellow); }
+    .stat .accent { color: var(--ink); font-weight: 700; } /* Golfi: #FFBD00 text on cream forbidden */
     .detail {
       display: none;
       width: 100%;
@@ -268,10 +268,11 @@
       <button type="button" class="card" aria-expanded="false" data-id="2">
         <div class="card-top">
           <span class="icon" aria-hidden="true">
-            <!-- unequal bars: tall CN, short world -->
+            <!-- unequal bars: height encodes; yellow = accent mark only -->
             <svg viewBox="0 0 24 24">
-              <rect x="5" y="5" width="5" height="14" rx="1" class="fill-yellow"/>
-              <rect x="14" y="12" width="5" height="7" rx="1" class="fill-ink"/>
+              <rect x="5" y="5" width="5" height="14" rx="1" class="fill-ink"/>
+              <rect x="14" y="12" width="5" height="7" rx="1"/>
+              <path d="M5 19h14" class="stroke-yellow"/>
             </svg>
           </span>
           <div class="card-label">
@@ -356,12 +357,10 @@
       <button type="button" class="card" aria-expanded="false" data-id="6">
         <div class="card-top">
           <span class="icon" aria-hidden="true">
-            <!-- thin pie slice ~1/20 with yellow accent -->
+            <!-- thin share vs full track — no pie (Golfi: no camembert) -->
             <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="8"/>
-              <path d="M12 12 L12 4 A8 8 0 0 1 14.5 4.4 Z" class="fill-yellow" stroke="none"/>
-              <path d="M12 12L12 4" class="stroke-yellow"/>
-              <path d="M12 12L14.5 4.4" class="stroke-yellow"/>
+              <rect x="3" y="10" width="18" height="4" rx="1"/>
+              <rect x="3" y="10" width="4" height="4" rx="1" class="fill-yellow" stroke="none"/>
             </svg>
           </span>
           <div class="card-label">
