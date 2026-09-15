@@ -11,10 +11,11 @@
     :root {
       --yellow: #FFBD00;
       --ink: #181818;
-      --bg: #FAFAF8;
-      --muted: rgba(24, 24, 24, 0.58);
-      --muted-2: rgba(24, 24, 24, 0.4);
-      --line: rgba(24, 24, 24, 0.1);
+      --bg: #F3EBDD;
+      --surface: #FFFBF4;
+      --muted: rgba(24, 24, 24, 0.62);
+      --muted-2: rgba(24, 24, 24, 0.45);
+      --line: rgba(24, 24, 24, 0.12);
       --measure: 38rem;
     }
     * { box-sizing: border-box; }
@@ -29,25 +30,13 @@
       -webkit-font-smoothing: antialiased;
       font-size: 17px;
     }
-
-    /* Reading progress: yellow track, never yellow text */
     .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      z-index: 40;
+      position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40;
       background: rgba(24, 24, 24, 0.06);
     }
     .progress > span {
-      display: block;
-      height: 100%;
-      width: 0%;
-      background: var(--yellow);
-      transform-origin: left;
+      display: block; height: 100%; width: 0%; background: var(--yellow);
     }
-
     .wrap {
       max-width: 42rem;
       margin: 0 auto;
@@ -57,158 +46,64 @@
       .wrap { padding: 48px 28px 88px; }
       body { font-size: 18px; }
     }
-
     .topbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px 16px;
-      margin-bottom: 22px;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 10px 16px; margin-bottom: 22px;
     }
     .meta {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.4;
+      font-size: 11px; letter-spacing: 0.04em; color: var(--muted); margin: 0; line-height: 1.4;
     }
     .meta .sep { opacity: 0.45; margin: 0 0.35em; }
     .nav-prev {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--ink);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 12px;
-      background: #fff;
-      white-space: nowrap;
+      font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; color: var(--ink);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 7px 12px; background: var(--surface); white-space: nowrap;
     }
-    .nav-prev:hover,
-    .nav-prev:focus-visible {
-      border-color: var(--ink);
-      outline: none;
-    }
-    .nav-prev[aria-disabled="true"] {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    .score {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px 14px;
-      margin: 0 0 22px;
-      padding: 14px 16px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-    }
-    .score-label {
-      font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      margin: 0;
-      width: 100%;
-    }
-    .score-note {
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.35;
-      flex: 1 1 12rem;
-    }
-    .score-stars {
-      display: flex;
-      gap: 6px;
-    }
-    .score-stars button {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: var(--bg);
-      font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 14px;
-      color: var(--ink);
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .score-stars button[aria-pressed="true"] {
-      border-color: var(--ink);
-      background: #fff;
-      box-shadow: inset 0 -3px 0 var(--yellow);
-    }
-    .score-stars button:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 2px;
-    }
-
+    .nav-prev:hover, .nav-prev:focus-visible { border-color: var(--ink); outline: none; }
     .eyebrow {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 14px;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 14px;
     }
     .eyebrow::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 2px;
-      background: var(--yellow);
-      margin-right: 10px;
-      vertical-align: middle;
+      content: ""; display: inline-block; width: 20px; height: 2px;
+      background: var(--yellow); margin-right: 10px; vertical-align: middle;
     }
     h1 {
       font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
-      font-weight: 700;
-      font-size: clamp(30px, 8vw, 48px);
-      letter-spacing: 0.01em;
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 1.02;
+      font-weight: 700; font-size: clamp(30px, 8vw, 48px);
+      letter-spacing: 0.01em; text-transform: uppercase; margin: 0; line-height: 1.02;
+      color: var(--ink);
     }
     .lede {
-      margin: 16px 0 0;
-      color: var(--muted);
-      max-width: 34em;
-      font-size: 1.02em;
+      margin: 16px 0 0; color: var(--muted); max-width: 34em; font-size: 1.02em;
+      text-align: justify;
     }
-
     .hook {
       margin: 22px 0 0;
-      padding: 16px 0 16px 14px;
-      border-left: 3px solid var(--yellow);
+      padding: 18px 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--yellow);
+      border-radius: 12px;
       font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
-      font-size: clamp(18px, 4.5vw, 22px);
+      font-size: clamp(18px, 4.6vw, 23px);
       text-transform: uppercase;
-      letter-spacing: 0.03em;
-      line-height: 1.2;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
       color: var(--ink);
-      max-width: 28em;
+      font-weight: 700;
+      text-align: left;
     }
-
     .toc {
-      position: sticky;
-      top: 3px;
-      z-index: 5;
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      margin: 28px -18px 0;
-      padding: 12px 18px;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      position: sticky; top: 3px; z-index: 5;
+      display: flex; gap: 6px; overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      margin: 24px -18px 0; padding: 12px 18px;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -219,142 +114,142 @@
     .toc a {
       flex: 0 0 auto;
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 12px;
-      text-decoration: none;
-      color: var(--ink);
-      padding: 8px 11px;
+      font-size: 12px; text-decoration: none; color: var(--ink);
+      padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); white-space: nowrap;
+    }
+    .toc a:hover, .toc a:focus-visible { border-color: var(--ink); outline: none; }
+
+    .boxes {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 24px;
+    }
+    .box {
+      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      white-space: nowrap;
+      border-radius: 16px;
+      padding: 22px 18px 18px;
     }
-    .toc a:hover,
-    .toc a:focus-visible {
-      border-color: var(--ink);
-      outline: none;
+    @media (min-width: 640px) {
+      .box { padding: 28px 26px 22px; }
     }
-    .chapter {
-      padding: 40px 0 8px;
-      border-top: 1px solid var(--line);
-      margin-top: 8px;
-    }
-    .chapter:first-of-type { margin-top: 28px; }
     .chapter-kicker {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      margin: 0 0 10px;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted-2); margin: 0 0 10px;
     }
     .chapter-num {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: clamp(40px, 12vw, 64px);
-      line-height: 1;
-      margin: 0;
-      letter-spacing: -0.03em;
-      color: var(--ink);
+      font-size: clamp(40px, 12vw, 64px); line-height: 1; margin: 0;
+      letter-spacing: -0.03em; color: var(--ink);
     }
     .chapter-title {
       font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
-      font-size: clamp(20px, 5vw, 26px);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin: 14px 0 0;
-      line-height: 1.15;
-    }
-    .chapter-meta {
-      font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      color: var(--muted-2);
-      margin: 12px 0 0;
-      letter-spacing: 0.02em;
+      font-size: clamp(20px, 5vw, 26px); text-transform: uppercase;
+      letter-spacing: 0.04em; margin: 14px 0 0; line-height: 1.15; color: var(--ink);
     }
     .chapter-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--yellow);
-      border: none;
-      margin: 20px 0;
+      width: 40px; height: 2px; background: var(--yellow); border: none; margin: 18px 0;
     }
-    .chapter p {
-      margin: 0 0 1em;
-      max-width: var(--measure);
-      color: rgba(24, 24, 24, 0.88);
+    .chapter-body p, .essay p, .lede {
+      text-align: justify;
+      hyphens: auto;
     }
-    .takeaway {
-      margin: 1.1em 0 0;
-      padding: 12px 0 0;
-      border-top: 1px solid var(--line);
-      max-width: var(--measure);
-      font-size: 0.98em;
-      color: var(--ink);
+    .chapter-body p, .essay p {
+      margin: 0 0 1em; max-width: var(--measure); color: rgba(24, 24, 24, 0.92);
     }
-    .takeaway strong {
+    .chapter-body p:last-child, .essay p:last-child { margin-bottom: 0; }
+    .takeaway, .opinion {
+      margin: 1.1em 0 0; padding: 12px 0 0; border-top: 1px solid var(--line);
+      max-width: var(--measure); font-size: 0.98em; color: var(--ink);
+      text-align: justify;
+    }
+    .takeaway strong, .opinion strong {
       font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.72em;
-      display: block;
-      margin-bottom: 6px;
-      color: var(--muted);
+      font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      font-size: 0.72em; display: block; margin-bottom: 6px; color: var(--muted);
+    }
+    .sources {
+      margin: 18px 0 0; padding-top: 12px; border-top: 1px solid var(--line);
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: 10px; line-height: 1.45; color: var(--muted-2);
+      text-align: left;
+    }
+    .sources strong {
+      display: block; letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 4px; color: var(--muted);
+      font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
+      font-size: 0.85em;
     }
     .essay {
-      margin-top: 48px;
-      padding: 28px 0 0 18px;
-      border-top: 1px solid var(--line);
-      border-left: 3px solid var(--yellow);
+      margin-top: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--yellow);
+      border-radius: 16px;
+      padding: 24px 18px 20px;
     }
     .essay-label {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 12px;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 12px;
     }
     .essay h2 {
       font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
-      font-size: clamp(22px, 5.5vw, 30px);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin: 0 0 16px;
-      line-height: 1.1;
-    }
-    .essay p {
-      margin: 0 0 1em;
-      max-width: var(--measure);
-      color: rgba(24, 24, 24, 0.88);
+      font-size: clamp(22px, 5.5vw, 30px); text-transform: uppercase;
+      letter-spacing: 0.03em; margin: 0 0 16px; line-height: 1.1; color: var(--ink);
     }
     .cta {
-      margin-top: 1.25em;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      max-width: var(--measure);
-      font-size: 0.98em;
-      color: var(--ink);
+      margin-top: 1.25em; padding-top: 14px; border-top: 1px solid var(--line);
+      max-width: var(--measure); font-size: 0.98em; color: var(--ink);
+      text-align: left;
     }
     .cta .tag {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      margin: 0 0 8px;
+      font-size: 11px; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px;
     }
+    .score {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+      margin: 20px 0 0; padding: 16px 18px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    }
+    .score-label {
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted-2); margin: 0; width: 100%;
+    }
+    .score-note {
+      margin: 0; font-size: 13px; color: var(--muted); line-height: 1.35; flex: 1 1 12rem;
+    }
+    .score-stars { display: flex; gap: 6px; }
+    .score-stars button {
+      width: 36px; height: 36px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--bg);
+      font-family: "PT Mono", ui-monospace, monospace; font-size: 14px; color: var(--ink);
+      cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .score-stars button[aria-pressed="true"] {
+      border-color: var(--ink); background: var(--surface);
+      box-shadow: inset 0 -3px 0 var(--yellow);
+    }
+    .score-stars button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
     footer {
-      margin-top: 40px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      font-size: 11px;
-      color: var(--muted-2);
-      line-height: 1.45;
+      margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line);
+      font-size: 11px; color: var(--muted-2); line-height: 1.45;
     }
+  
+    .essay-sub {
+      font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin: 22px 0 10px;
+      color: var(--ink);
+    }
+
   </style>
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
-
   <div class="wrap">
     <div class="topbar">
       <p class="meta">
@@ -362,31 +257,18 @@
         <span class="sep">·</span>
         Week of 8 to 14 September 2026
         <span class="sep">·</span>
-        <span id="read-time">11 min read</span>
+        <span id="read-time">15 min read</span>
       </p>
       <a class="nav-prev" href="/newsletter/archive/2026-W36">Last week</a>
     </div>
 
-    <!-- Score: 1-5 localStorage only -->
-    <aside class="score" aria-label="Rate this edition" data-score-key="nl-score-2026-W37">
-      <p class="score-label">Your score for this edition</p>
-      <div class="score-stars" role="group" aria-label="Score from 1 to 5">
-        <button type="button" data-score="1" aria-pressed="false">1</button>
-        <button type="button" data-score="2" aria-pressed="false">2</button>
-        <button type="button" data-score="3" aria-pressed="false">3</button>
-        <button type="button" data-score="4" aria-pressed="false">4</button>
-        <button type="button" data-score="5" aria-pressed="false">5</button>
-      </div>
-      <p class="score-note">Stored on this device only. No server score.</p>
-    </aside>
-
     <header>
       <p class="eyebrow">Industry signal · Australia</p>
       <h1>Six numbers you rarely see</h1>
-      <p class="lede">World → Australia. Density, demand mix, AI by firm size, IVA lift, thin GDP share: sourced, dated, no pitch up front.</p>
+      <p class="lede">World to Australia. Density, demand mix, AI by firm size, IVA lift, thin GDP share: sourced, dated, no pitch up front.</p>
     </header>
 
-    <p class="hook">Somewhere this week, a plant you compete with will treat as normal what still feels optional on your floor. Not a slogan. Six dated numbers from IFR, ABS and the World Bank. Then a hard close: are you still benchmarking against yesterday's plant?</p>
+    <p class="hook">Somewhere this week, a plant you compete with will treat as normal what still feels optional on your floor. Not a slogan. Six dated numbers from IFR, ABS and the World Bank. Then a hard close: are you still benchmarking against yesterday&#x27;s plant?</p>
 
     <nav class="toc" aria-label="Jump to a number">
       <a href="#n1">177 / 10k</a>
@@ -398,100 +280,148 @@
       <a href="#essay">This week</a>
     </nav>
 
-    <article class="chapter" id="n1">
+    <div class="boxes">
+    <article class="box" id="n1">
       <p class="chapter-kicker">01 · World density</p>
       <p class="chapter-num">177 / 10k</p>
       <h2 class="chapter-title">World density</h2>
-      <p class="chapter-meta">177 robots / 10,000 manufacturing employees · world · 2024 · IFR World Robotics 2025 Foreword</p>
       <hr class="chapter-rule" />
-      <p>Global robot density rose again in 2024: 177 industrial robots for every 10,000 people employed in manufacturing, up from 163 the year before. That is not a tech headline. It is a factory baseline.</p>
-      <p>The same IFR Foreword frame shows how busy the floor stayed. New installations worldwide reached 542,076 in 2024 (+0.1% versus 2023), while the operational stock hit 4,663,773 (+8.9%). Orders can flatten; the installed base keeps working. Top densities in the same year underline how far &quot;normal&quot; has moved: Korea 1,220, Singapore 818, China 567, Germany 449, Japan 446 per 10,000 manufacturing employees.</p>
-      <p>Density is a blunt measure, but executives use it because it travels. It tells you how common automation has become on the floor, not in slide decks. When the world average keeps climbing, &quot;we will automate later&quot; stops sounding prudent and starts sounding like a decision to benchmark against yesterday&#x27;s plant.</p>
-      <p>For Australian leaders in ops and finance, the useful question is not whether robots exist. It is whether your line&#x27;s labour and throughput assumptions still match a world that is quietly re-tooling. Productivity gaps rarely announce themselves in one quarter. They show up as margin pressure, overtime normalised as culture, and capital plans that forever wait for a quieter year.</p>
-      <p class="takeaway"><strong>Takeaway</strong> Treat 177 as the new normal for competitive manufacturing, then ask, honestly, where your sites sit relative to that floor.</p>
+      <div class="chapter-body">
+<p>Global robot density rose again in 2024: 177 industrial robots for every 10,000 people employed in manufacturing, up from 163 the year before. That is not a tech headline. It is a factory baseline.</p>
+<p>The same IFR Foreword frame shows how busy the floor stayed. New installations worldwide reached <strong>542,076</strong> in 2024 (+0.1% versus 2023), while the operational stock hit <strong>4,663,773</strong> (+8.9%). Orders can flatten; the installed base keeps working. Top densities in the same year underline how far "normal" has moved: Korea <strong>1,220</strong>, Singapore <strong>818</strong>, China <strong>567</strong>, Germany <strong>449</strong>, Japan <strong>446</strong> per 10,000 manufacturing employees.</p>
+<p>Density is a blunt measure, but executives use it because it travels. It tells you how common automation has become on the floor, not in slide decks. When the world average keeps climbing, "we'll automate later" stops sounding prudent and starts sounding like a decision to benchmark against yesterday's plant.</p>
+<p>For Australian leaders in ops and finance, the useful question is not whether robots exist. It is whether your line's labour and throughput assumptions still match a world that is quietly re-tooling. Productivity gaps rarely announce themselves in one quarter. They show up as margin pressure, overtime normalised as culture, and capital plans that forever wait for a quieter year.</p>
+<p class="takeaway"><strong>Takeaway</strong> Treat 177 as the new normal for competitive manufacturing, then ask, honestly, where your sites sit relative to that floor.</p>
+      </div>
+      <p class="sources"><strong>Sources</strong> 177 robots / 10,000 manufacturing employees · world · 2024 · IFR World Robotics 2025 Foreword</p>
     </article>
-    <article class="chapter" id="n2">
+    <article class="box" id="n2">
       <p class="chapter-kicker">02 · China vs world</p>
       <p class="chapter-num">3.2×</p>
       <h2 class="chapter-title">China vs world</h2>
-      <p class="chapter-meta">China density 567 / world 177 ≈ 3.2× · 2024 · IFR · China share of deployments · IFR press 25 Sep 2025</p>
       <hr class="chapter-rule" />
-      <p>China&#x27;s manufacturing robot density is 567 per 10,000 employees. Against the world average of 177, that is roughly 3.2×. Same year. Same IFR frame. No mystery arithmetic.</p>
-      <p>Scale shows up in deployments too. In 2024 China accounted for 54% of global robot deployments, about 295,045 installations (a record). Its operational stock sat above 2,027,000. Domestic suppliers took 57% of that market (up from about 28% a decade earlier; year-on-year the domestic share moved 47% to 57%). High density plus a huge install pipeline means more plants running repeatable processes, more maintenance muscle, and more vendors competing on uptime. That compounds.</p>
-      <p>Australian manufacturers do not need to copy China&#x27;s model. They do need to stop treating automation density as exotic. A 3.2× gap is not closed with a pilot cell and a press release. It is closed with sequenced capital, clear ownership on the floor, and metrics finance actually trusts.</p>
-      <p class="takeaway"><strong>Takeaway</strong> When a peer economy runs at triple the world density and takes over half of new deployments, waiting for perfect conditions is a strategy with a measurable cost.</p>
+      <div class="chapter-body">
+<p>China's manufacturing robot density is <strong>567</strong> per 10,000 employees. Against the world average of 177, that is roughly <strong>3.2x</strong>. Same year. Same IFR frame. No mystery arithmetic.</p>
+<p>Scale shows up in deployments too. In 2024 China accounted for <strong>54%</strong> of global robot deployments, about <strong>295,045</strong> installations (a record). Its operational stock sat above <strong>2,027,000</strong>. Domestic suppliers took <strong>57%</strong> of that market (up from about <strong>28%</strong> a decade earlier; year-on-year the domestic share moved <strong>47% to 57%</strong>). High density plus a huge install pipeline means more plants running repeatable processes, more maintenance muscle, and more vendors competing on uptime. That compounds.</p>
+<p>Australian manufacturers do not need to copy China's model. They do need to stop treating automation density as exotic. A 3.2x gap is not closed with a pilot cell and a press release. It is closed with sequenced capital, clear ownership on the floor, and metrics finance actually trusts.</p>
+<p class="takeaway"><strong>Takeaway</strong> When a peer economy runs at triple the world density and takes over half of new deployments, waiting for perfect conditions is a strategy with a measurable cost.</p>
+      </div>
+      <p class="sources"><strong>Sources</strong> China density 567 / world 177 ~ 3.2x · 2024 · IFR · China share of deployments · IFR press 25 Sep 2025</p>
     </article>
-    <article class="chapter" id="n3">
+    <article class="box" id="n3">
       <p class="chapter-kicker">03 · Elec over auto</p>
       <p class="chapter-num">Elec &gt; Auto</p>
       <h2 class="chapter-title">Elec over auto</h2>
-      <p class="chapter-meta">Electronics 128,899 vs automotive 126,088 · 2024 · IFR · sector shares IFR WR 2025 Exec Summary + press 25 Sep 2025</p>
       <hr class="chapter-rule" />
-      <p>In 2024, electronics again overtook automotive as the larger buyer of new industrial robot installations, 128,899 against 126,088 (gap about 2,800 units). As shares of global installs, electronics was 24% (+1 percentage point) and automotive 23% (-2 pp). Metal and machinery sat third at 16% (+2 pp). It was the fourth straight year above 500,000 new installations worldwide. By region, Asia took 74% of new deployments, Europe 16%, the Americas 9%.</p>
-      <p>Automation follows the supply chains that are moving, not only the plants with the longest history. Electronics cycles are fast, mix is messy, and quality gates are merciless.</p>
-      <p>Opinion: demand for flexible, vision-heavy, changeover-tolerant systems is winning budget where those chains move fastest.</p>
-      <p>For AU ops and finance: capital plans still anchored to &quot;what auto did in 2015&quot; will mis-read risk. The interesting lines are often high-mix, high-scrutiny, and short on labour tolerance for rework.</p>
-      <p>Opinion: that is where computer vision and disciplined robotics earn their keep, not as theatre, as throughput insurance.</p>
-      <p class="takeaway"><strong>Takeaway</strong> Follow where new robots are actually being ordered. In 2024, that was electronics edging past auto, with Asia still dominating new deployments.</p>
+      <div class="chapter-body">
+<p>In 2024, electronics again overtook automotive as the larger buyer of new industrial robot installations, <strong>128,899</strong> against <strong>126,088</strong> (gap about <strong>2,800</strong> units). As shares of global installs, electronics was <strong>24%</strong> (+1 percentage point) and automotive <strong>23%</strong> (-2 pp). Metal and machinery sat third at <strong>16%</strong> (+2 pp). It was the fourth straight year above <strong>500,000</strong> new installations worldwide. By region, Asia took <strong>74%</strong> of new deployments, Europe <strong>16%</strong>, the Americas <strong>9%</strong>.</p>
+<p>Automation follows the supply chains that are moving, not only the plants with the longest history. Electronics cycles are fast, mix is messy, and quality gates are merciless.</p>
+<p class="opinion"><strong>Opinion</strong> demand for flexible, vision-heavy, changeover-tolerant systems is winning budget where those chains move fastest.</p>
+<p>For AU ops and finance: capital plans still anchored to "what auto did in 2015" will mis-read risk. The interesting lines are often high-mix, high-scrutiny, and short on labour tolerance for rework.</p>
+<p class="opinion"><strong>Opinion</strong> that is where computer vision and disciplined robotics earn their keep, not as theatre, as throughput insurance.</p>
+<p class="takeaway"><strong>Takeaway</strong> Follow where new robots are actually being ordered. In 2024, that was electronics edging past auto, with Asia still dominating new deployments.</p>
+      </div>
+      <p class="sources"><strong>Sources</strong> Electronics installations 128,899 vs automotive 126,088 · 2024 · IFR · sector shares IFR WR 2025 Exec Summary + press 25 Sep 2025</p>
     </article>
-    <article class="chapter" id="n4">
+    <article class="box" id="n4">
       <p class="chapter-kicker">04 · AI size gap</p>
       <p class="chapter-num">3.2×</p>
       <h2 class="chapter-title">AI size gap</h2>
-      <p class="chapter-meta">AU AI adoption · FY 2024-25 · ABS BCS · large ≈ 3.2× small/micro (≈35% / ≈11%); overall ≈12%</p>
       <hr class="chapter-rule" />
-      <p>Only about 12% of Australian businesses used AI in 2024-25. Dig one layer deeper and the story sharpens: roughly 35% of large firms versus about 11% of small and micro. That is ~3.2×, an adoption gap by size, not by slogan. Medium firms sat near ~22% (versus 3% in 2021-22). Large firms moved from about 9% to 35% over that stretch. Innovation-active businesses used AI at 20% versus 6% for the rest. 46% of businesses were innovation-active. Top sectors included information/media/telecom at 38%, and professional scientific services and finance at 24% each (ABS media 25 Jun 2026 and Technology &amp; innovation hub, FY 2024-25 BCS window).</p>
-      <p>Mid-market organisations sit in the uncomfortable middle: too complex to ignore the tools, too lean to absorb failed experiments. The failure mode is familiar, buy a licence, skip the process redesign, declare &quot;AI&quot; done. The ABS split should make boards ask a colder question: are we building capability, or renting novelty?</p>
-      <p>For finance, the unit that matters is not &quot;AI spend&quot;. It is avoided scrap, faster inspection, fewer unplanned stops, cleaner handoffs between shifts. If those units are not in the business case, you are funding fashion.</p>
-      <p class="takeaway"><strong>Takeaway</strong> Australia&#x27;s AI story is a size split. Mid-market is no longer &quot;early&quot;. Leaders who wait for certainty will watch large peers compound a process advantage.</p>
+      <div class="chapter-body">
+<p>Only about <strong>12%</strong> of Australian businesses used AI in 2024-25. Dig one layer deeper and the story sharpens: roughly <strong>35%</strong> of large firms versus about <strong>11%</strong> of small and micro. That is ~<strong>3.2x</strong>, an adoption gap by size, not by slogan. Medium firms sat near <strong>~22%</strong> (versus <strong>3%</strong> in 2021-22). Large firms moved from about <strong>9%</strong> to <strong>35%</strong> over that stretch. Innovation-active businesses used AI at <strong>20%</strong> versus <strong>6%</strong> for the rest. <strong>46%</strong> of businesses were innovation-active. Top sectors included information/media/telecom at <strong>38%</strong>, and professional scientific services and finance at <strong>24%</strong> each (ABS media 25 Jun 2026 and Technology & innovation hub, FY 2024-25 BCS window).</p>
+<p>Mid-market organisations sit in the uncomfortable middle: too complex to ignore the tools, too lean to absorb failed experiments. The failure mode is familiar, buy a licence, skip the process redesign, declare "AI" done. The ABS split should make boards ask a colder question: are we building capability, or renting novelty?</p>
+<p>For finance, the unit that matters is not "AI spend". It is avoided scrap, faster inspection, fewer unplanned stops, cleaner handoffs between shifts. If those units are not in the business case, you are funding fashion.</p>
+<p class="takeaway"><strong>Takeaway</strong> Australia's AI story is a size split. Mid-market is no longer "early". Leaders who wait for certainty will watch large peers compound a process advantage.</p>
+      </div>
+      <p class="sources"><strong>Sources</strong> AU AI adoption · FY 2024-25 · ABS BCS · large ~ 3.2x small/micro (~35% / ~11%); overall ~12%</p>
     </article>
-    <article class="chapter" id="n5">
+    <article class="box" id="n5">
       <p class="chapter-kicker">05 · AU IVA lift</p>
       <p class="chapter-num">+A$6.2bn</p>
       <h2 class="chapter-title">AU IVA lift</h2>
-      <p class="chapter-meta">AU manufacturing IVA +A$6.2bn absolute (A$141,973m − A$135,724m) · +4.6% · employment end June 901k (+0.2%) · 2024-25 vs prior · ABS Australian Industry</p>
       <hr class="chapter-rule" />
-      <p>Australian manufacturing industry value added rose by about A$6.2 billion in absolute terms between 2023-24 and 2024-25 (A$141,973m after A$135,724m), a +4.6% lift. Employment at end of June sat near 901,000, up 0.2% on the prior year. This is not a eulogy for manufacturing. It is evidence the sector still moves both money and labour: value and headcount edged up together.</p>
-      <p>Growth without modernisation is fragile. Rising IVA can hide ageing assets, overtime dependency, and quality variance that customers will eventually price. The optimistic reading is capacity and demand. The disciplined reading is: use the lift to fund the boring upgrades, sensing, data, robotics, while cash flow still supports them.</p>
-      <p>Finance should like this number because it is absolute, transparent, and tied to ABS. Ops should like it because it kills the myth that &quot;there is nothing left to improve here.&quot;</p>
-      <p class="takeaway"><strong>Takeaway</strong> AU manufacturing is still adding value and jobs at the margin. The open question is how much of that value is locked behind outdated lines.</p>
+      <div class="chapter-body">
+<p>Australian manufacturing industry value added rose by about <strong>A$6.2 billion</strong> in absolute terms between 2023-24 and 2024-25 (A$141,973m after A$135,724m), a <strong>+4.6%</strong> lift. Employment at end of June sat near <strong>901,000</strong>, up <strong>0.2%</strong> on the prior year. This is not a eulogy for manufacturing. It is evidence the sector still moves both money and labour: value and headcount edged up together.</p>
+<p>Growth without modernisation is fragile. Rising IVA can hide ageing assets, overtime dependency, and quality variance that customers will eventually price. The optimistic reading is capacity and demand. The disciplined reading is: use the lift to fund the boring upgrades, sensing, data, robotics, while cash flow still supports them.</p>
+<p>Finance should like this number because it is absolute, transparent, and tied to ABS. Ops should like it because it kills the myth that "there is nothing left to improve here."</p>
+<p class="takeaway"><strong>Takeaway</strong> AU manufacturing is still adding value and jobs at the margin. The open question is how much of that value is locked behind outdated lines.</p>
+      </div>
+      <p class="sources"><strong>Sources</strong> AU manufacturing IVA +A$6.2bn absolute (A$141,973m - A$135,724m) · +4.6% · employment end June 901k (+0.2%) · 2024-25 vs prior · ABS Australian Industry</p>
     </article>
-    <article class="chapter" id="n6">
+    <article class="box" id="n6">
       <p class="chapter-kicker">06 · Thin GDP share</p>
       <p class="chapter-num">5.4%</p>
       <h2 class="chapter-title">Thin GDP share</h2>
-      <p class="chapter-meta">Manufacturing 5.4% of AU GDP · 2024 · World Bank NV.IND.MANF.ZS · vs Germany 18.0% · China 24.8% (2024) · Europe install context IFR press 25 Sep 2025</p>
       <hr class="chapter-rule" />
-      <p>Manufacturing is about 5.4% of Australian GDP (2024). Germany sits near 18.0%; China near 24.8%. We are not a factory economy. That is structural, resources, services, geography, not a moral failing.</p>
-      <p>Even thick factory economies invest in cycles. In 2024 Europe installed about 85,006 industrial robots (-8%), of which the EU was roughly 80%. Germany alone installed 26,982 (-5%), about 32% of Europe&#x27;s total. A deep industrial base does not freeze capital spending; it adjusts it.</p>
-      <p>It does change the stakes in Australia. When manufacturing is a thinner slice of GDP, every point of productivity and every hour of downtime weighs more. There is less volume to absorb waste. Inefficiency is not cushioned by a vast domestic industrial base. Export and specialty manufacturers feel that immediately; everyone else feels it when a single plant&#x27;s reliability becomes a customer risk.</p>
-      <p>Peak-end for this newsletter: Australia can stay a high-skill, high-mix manufacturer. It cannot afford casual inefficiency. Thin share means ruthless focus on what the plant actually ships.</p>
-      <p class="takeaway"><strong>Takeaway</strong> Little manufacturing share of GDP means little room for sloppy throughput. Modernise the lines you keep.</p>
+      <div class="chapter-body">
+<p>Manufacturing is about <strong>5.4%</strong> of Australian GDP (2024). Germany sits near <strong>18.0%</strong>; China near <strong>24.8%</strong>. We are not a factory economy. That is structural, resources, services, geography, not a moral failing.</p>
+<p>Even thick factory economies invest in cycles. In 2024 Europe installed about <strong>85,006</strong> industrial robots (-8%), of which the EU was roughly <strong>80%</strong>. Germany alone installed <strong>26,982</strong> (-5%), about <strong>32%</strong> of Europe's total. A deep industrial base does not freeze capital spending; it adjusts it.</p>
+<p>It does change the stakes in Australia. When manufacturing is a thinner slice of GDP, every point of productivity and every hour of downtime weighs more. There is less volume to absorb waste. Inefficiency is not cushioned by a vast domestic industrial base. Export and specialty manufacturers feel that immediately; everyone else feels it when a single plant's reliability becomes a customer risk.</p>
+<p>Peak-end for this newsletter: Australia can stay a high-skill, high-mix manufacturer. It cannot afford casual inefficiency. Thin share means ruthless focus on what the plant actually ships.</p>
+<p class="takeaway"><strong>Takeaway</strong> Little manufacturing share of GDP means little room for sloppy throughput. Modernise the lines you keep.</p>
+      </div>
+      <p class="sources"><strong>Sources</strong> Manufacturing 5.4% of AU GDP · 2024 · World Bank NV.IND.MANF.ZS · vs Germany 18.0% · China 24.8% (2024) · Europe install context IFR press 25 Sep 2025</p>
     </article>
 
-    <section class="essay" id="essay">
-      <h2>This week's take</h2>
-      <p class="essay-kicker">Run the plants you have</p>
-      <p>Australia will not win by pretending it is Germany or China. It wins by running the plants it does have with less waste, faster feedback, and automation that finance can audit.</p>
-      <p>The six numbers above are one argument in six frames. The world density floor rose from 163 to 177 while operational stock grew +8.9% even as new installs barely moved. China already runs about 3.2 times world density and took 54% of 2024 deployments. New robot demand skewed toward electronics over automotive, with Asia at 74% of new installations. At home, AI adoption splits by firm size: large firms near 35%, medium near 22%, small/micro near 11%. Manufacturing IVA still grew by about A$6.2 billion, with employment slightly up, on only 5.4% of GDP. So every inefficiency hits harder.</p>
-      <p>Fact stitch: Asia&#x27;s 74% share of new installs, a world stock still growing at +8.9%, and medium-firm AI at ~22% in Australia mean the mid-market is no longer an &quot;early adopter&quot; story. Opinion: the optional phase is ending in the data, not in the slogans.</p>
-      <p>The lazy story is national decline. It flatters nobody and guides nothing. The engaged story is selectivity. Keep the capable plants. Instrument them. Stop romanticising manual variance as &quot;craft&quot; when it is actually cost, rework, and late discovery. A thin manufacturing share of GDP is not an excuse to shrug. It is a reason to be ruthless about what each line ships, scrapes, and waits for.</p>
-      <p>Trust, for this audience, is not a brand adjective. It is dated sources, transparent ratios, and a clean split between fact and opinion. Passion shows up as care for the line: changeovers that do not invent defects, inspection that catches drift early, downtime that has an owner. Fun, in industrial B2B, is narrower and more honest than hype. It is the relief when a process finally behaves the same on night shift as on day shift.</p>
+        <section class="essay" id="essay" aria-labelledby="essay-title">
+      <p class="essay-label">This week's take</p>
+      <h2 id="essay-title">Run the plants you have</h2>
+      <p><strong>Position.</strong> Australia will not win by pretending it is Germany or China. It wins by running the plants it<em>does</em>have with less waste, faster feedback, and automation that finance can audit.</p>
+      <h3 class="essay-sub">The six numbers as one argument</h3>
+      <p>The six figures above are not a random KPI wall. They are one argument in six frames, read in order.</p>
+      <p>The world density floor rose from 163 to 177 while operational stock grew<strong>+8.9%</strong>even as new installs barely moved (IFR World Robotics 2025 Foreword, calendar year 2024). That pairing matters: the base keeps working while the &quot;we&#x27;ll wait for the next boom&quot; story loses force. China already runs about 3.2 times world density and took<strong>54%</strong>of 2024 deployments (IFR press 25 Sep 2025). New robot demand skewed toward electronics over automotive, with<strong>Asia at 74%</strong>of new installations. At home, AI adoption splits by firm size: large firms near 35%, medium near<strong>22%</strong>, small/micro near 11% (ABS Business Characteristics Survey, FY 2024-25). Manufacturing IVA still grew by about A$6.2 billion, with employment slightly up, on only 5.4% of GDP (ABS Australian Industry; World Bank NV.IND.MANF.ZS, 2024). So every inefficiency hits harder.</p>
+      <p class="opinion"><strong>Fact stitch</strong> Asia&#x27;s 74% share of new installs, a world stock still growing at +8.9%, and medium-firm AI at ~22% in Australia are the measured backdrop.</p>
+      <p class="opinion"><strong>Opinion</strong> the mid-market is no longer an &quot;early adopter&quot; story. The optional phase is ending in the data, not in the slogans.</p>
+      <h3 class="essay-sub">What &quot;optional&quot; actually costs</h3>
+      <p class="opinion"><strong>Opinion</strong> optional automation is rarely free. It shows up as overtime that became culture, inspection that catches defects after value is already trapped in the part, and quotes that lose because cycle time or scrap risk sits in the price. Finance sees it late, as margin noise. Ops sees it early, as Friday firefighting. The gap between those two clocks is where capital decisions go soft.</p>
+      <p>Listen to how the argument usually dies in a leadership meeting. Ops brings a pain. Finance asks for a business case. Ops brings a vendor slide. Finance asks for a baseline. Nobody owns the baseline, so the room books another workshop. Six months later the same scrap line is still the same scrap line, only now with a new nickname. That is not prudence. That is drift with minutes attached.</p>
+      <p>A thin manufacturing share of GDP (5.4% in Australia versus much thicker shares in Germany and China) is not an insult. It is a constraint. Less volume means less cushion. One unreliable line can become a customer risk faster than in a factory-heavy economy. That is why the Europe install dip in 2024 (about 85,006 robots, -8%, IFR press 25 Sep 2025) still matters as context: even deep industrial bases adjust spending cyclically. They do not freeze the idea of modernising; they time it.</p>
+      <h3 class="essay-sub">Trust, passion, fun without the brochure voice</h3>
+      <p>Trust, for this audience, is not a brand adjective. It is dated sources, transparent ratios, and a clean split between fact and opinion. If a claim cannot carry a source, a date, and a measurement window, it does not belong in the same paragraph as an IFR or ABS figure.</p>
+      <p>Passion shows up as care for the line: changeovers that do not invent defects, inspection that catches drift early, downtime that has an owner. Passion is not louder kick-off emails. It is refusing to celebrate a pilot that never named a unit.</p>
+      <p>Fun, in industrial B2B, is narrower and more honest than hype. It is the relief when a process finally behaves the same on night shift as on day shift. It is when finance and ops can point at the same chart without translating. That is the emotional payoff executives actually buy, even when they pretend they only buy ROI.</p>
       <p>Boards often fail here by buying theatre. A robot cell without a metric. An &quot;AI&quot; licence without a redesigned handoff. A strategy offsite that never names a unit. Ops and finance should share one language: scrap rate, inspection minutes, changeover time, unplanned downtime, first-pass yield. If the unit is not on the page, the capital story is fashion.</p>
-      <p>Opinion: denser automation abroad and a size-split AI pattern at home will not &quot;skip&quot; mid-market Australian manufacturers. They will price them: slower quotes, tighter customer audits, less forgiveness on variance. The response is not to copy China&#x27;s model. It is to pick the plants worth keeping and make their feedback loops boringly good.</p>
+      <h3 class="essay-sub">How mid-market gets priced</h3>
+      <p class="opinion"><strong>Opinion</strong> denser automation abroad and a size-split AI pattern at home will not &quot;skip&quot; mid-market Australian manufacturers. They will price them: slower quotes, tighter customer audits, less forgiveness on variance. The response is not to copy China&#x27;s model (54% of deployments, domestic suppliers at 57%). It is to pick the plants worth keeping and make their feedback loops boringly good.</p>
+      <p>Medium-firm AI near 22% (ABS) already shows the middle of the market is moving. Waiting for a perfect playbook is itself a choice. Large peers at ~35% adoption are not waiting with you. Customers who audit quality systems do not care that your roadmap is &quot;after the peak season.&quot; Peak season is when variance hurts most.</p>
+      <p class="opinion"><strong>Opinion</strong> the competitive question is shifting from &quot;do we have robots?&quot; to &quot;can we prove the line is under control?&quot; Proof is boring. Proof wins renewals.</p>
+      <h3 class="essay-sub">A quarter you can actually run</h3>
       <p>Practical sequence for the next quarter. Pick one unit. Instrument it so the number is trusted by both ops and finance. Improve it for thirty to sixty days with the people who run the line. Only then decide what capital follows (sensing, vision, robotics, or simply process). That order beats another slide about Industry 4.0.</p>
+      <p>Make the unit embarrassingly concrete. Not &quot;quality.&quot; First-pass yield on the SKU that creates the most rework hours. Not &quot;efficiency.&quot; Changeover minutes on the cell that gatekeeps Friday despatch. Not &quot;digital.&quot; Unplanned downtime minutes on the asset that already has a nickname in the smoko room. If the unit needs a glossary to explain, it is not ready for a board pack.</p>
       <p>Selectivity also means saying no. No to pilots that cannot name a baseline. No to vendors who own your IP by default. No to upgrades that cannot survive a board question about payback in labour hours, scrap, or recovered capacity. Vendor-agnostic work and client-held IP are not niceties. They are how trust survives the procurement cycle.</p>
-      <p class="close"><strong>Close.</strong> We opened with a simple shock: somewhere this week, a competing plant will treat as normal what still feels optional on your floor. The numbers did not soften that. World density rose. China runs multiples of that density and half of new deployments. Electronics led installs. AI adoption in Australia splits by firm size, with medium firms already near 22%. Manufacturing still added billions in IVA, on a thin share of GDP that leaves little cushion for waste. The close is the same question, now earned: are you still benchmarking against yesterday&#x27;s plant? If yes, pick one unit this quarter and make the answer measurable. If no, you already know which line to fund next.</p>
-      <p class="cta">Turnkey Computer Vision | Machine Learning | Robotics lines, vendor-agnostic, IP stays with you. A plant to modernise? Reply to this email.</p>
+      <p class="opinion"><strong>Opinion</strong> if a proposal cannot survive three questions (baseline, owner on the floor, payback unit finance accepts), it is not a modernisation plan. It is a purchase order with optimism attached.</p>
+      <h3 class="essay-sub">What &quot;yesterday&#x27;s plant&quot; looks like</h3>
+      <p>Yesterday&#x27;s plant is not always old paint and tired conveyors. Sometimes it is a clean floor with tribal knowledge locked in three people, a quality gate that lives in a spreadsheet, and a CapEx list that reshuffles every quarter without ever retiring a bad idea. Sometimes it is strong revenue with soft process control. The IFR and ABS numbers do not accuse your site. They set the climate you operate in.</p>
+      <p class="opinion"><strong>Opinion</strong> if your mental benchmark is still &quot;good enough for Australia,&quot; you are using geography as a cushion. Thin GDP share means that cushion is smaller than it feels in a site tour.</p>
+      <h3 class="essay-sub">Close: the hook, earned</h3>
+      <p>We opened with a simple shock: somewhere this week, a competing plant will treat as normal what still feels optional on your floor. The numbers did not soften that. World density rose from 163 to 177 while stock grew +8.9%. China runs multiples of world density and about half of new deployments. Electronics edged past automotive on installs, with Asia at 74% of new deployments. AI adoption in Australia splits by firm size, with medium firms already near 22%. Manufacturing still added about A$6.2 billion in IVA, on a thin share of GDP that leaves little cushion for waste.</p>
+      <p>The close is the same question, now earned: are you still benchmarking against yesterday&#x27;s plant? If yes, pick one unit this quarter and make the answer measurable. If no, you already know which line to fund next. Either way, stop treating &quot;later&quot; as a strategy. Later is how optional becomes expensive.</p>
+      <p>Read the six again if you skimmed. Then answer the hook in one sentence you would be willing to say aloud in a leadership meeting. If you cannot say it without hedging, you already know what &quot;optional&quot; is costing you.</p>
+      <div class="cta">
+        <p class="tag">Computer Vision | Machine Learning | Robotics</p>
+        <p>Turnkey Computer Vision | Machine Learning | Robotics lines, vendor-agnostic, IP stays with you. A plant to modernise? Reply to this email.</p>
+      </div>
     </section>
+    </div>
+
+    <aside class="score" aria-label="Happiness score" data-score-key="nl-score-2026-W37">
+      <p class="score-label">Happiness score for this edition</p>
+      <div class="score-stars" role="group" aria-label="Score from 1 to 5">
+        <button type="button" data-score="1" aria-pressed="false">1</button>
+        <button type="button" data-score="2" aria-pressed="false">2</button>
+        <button type="button" data-score="3" aria-pressed="false">3</button>
+        <button type="button" data-score="4" aria-pressed="false">4</button>
+        <button type="button" data-score="5" aria-pressed="false">5</button>
+      </div>
+      <p class="score-note">Stored on this device only. No server score.</p>
+    </aside>
 
     <footer>
- Sources: IFR World Robotics 2025 Foreword · ABS · World Bank NV.IND.MANF.ZS<br />
- Ratios shown with transparent inputs. Facts under Phil recheck.
- </footer>
-
+      Edition sources also listed under each box. IFR · ABS · World Bank NV.IND.MANF.ZS<br />
+      Ratios shown with transparent inputs.
+    </footer>
   </div>
-
   <script>
     (function () {
       var bar = document.getElementById("read-progress");
@@ -502,7 +432,6 @@
       }
       var mins = Math.max(1, Math.round(words() / 200));
       if (rt) rt.textContent = mins + " min read";
-
       function onScroll() {
         var el = document.documentElement;
         var max = el.scrollHeight - el.clientHeight;
@@ -511,7 +440,6 @@
       }
       window.addEventListener("scroll", onScroll, { passive: true });
       onScroll();
-
       var box = document.querySelector("[data-score-key]");
       if (box) {
         var key = box.getAttribute("data-score-key");
