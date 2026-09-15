@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Corematic — Six numbers you rarely see</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+3:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #ffbd00;
+      --white: #ffffff;
+      --ink: #181818;
+      --black: #000000;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--white);
+      font-family: "Source Sans 3", "Sofia Pro", Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-family: "Bebas Neue", Adam, Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(42px, 8vw, 64px);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 0.95;
+      color: var(--white);
+    }
+    .lede {
+      margin: 18px 0 0;
+      max-width: 36em;
+      font-size: 18px;
+      color: rgba(255,255,255,0.78);
+    }
+    .rule {
+      border: none;
+      border-top: 1px solid rgba(255,189,0,0.35);
+      margin: 36px 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--black);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-top: 3px solid var(--yellow);
+      padding: 22px 20px 24px;
+      min-height: 100%;
+    }
+    .stat {
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: clamp(28px, 4vw, 34px);
+      color: var(--yellow);
+      margin: 0;
+      line-height: 1.15;
+    }
+    .stat-sub {
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      margin: 8px 0 0;
+      letter-spacing: 0.02em;
+    }
+    .comment {
+      margin: 14px 0 0;
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+    }
+    .cta {
+      margin-top: 40px;
+      padding: 28px 24px;
+      background: var(--black);
+      border: 1px solid rgba(255,189,0,0.4);
+    }
+    .cta-brand {
+      font-family: "Bebas Neue", Adam, Impact, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      font-size: 20px;
+      margin: 0;
+    }
+    .cta-tag {
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin: 8px 0 0;
+    }
+    .cta p.body {
+      margin: 16px 0 0;
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      max-width: 40em;
+    }
+    footer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Industry signal · Australia</p>
+    <h1>Six numbers you rarely see</h1>
+    <p class="lede">World → Australia. Not a pitch — a scan for leaders, finance and ops.</p>
+    <hr class="rule">
+
+    <section class="grid" aria-label="Six industry numbers">
+      <article class="card">
+        <p class="stat">177 / 10k</p>
+        <p class="stat-sub">robots · manuf. employees · world · 2024 · IFR</p>
+        <p class="comment">Global density rose again. Not automating now means benchmarking against yesterday’s plant.</p>
+      </article>
+
+      <article class="card">
+        <p class="stat">3.2×</p>
+        <p class="stat-sub">China density vs world · 567 ÷ 177 · 2024 · IFR</p>
+        <p class="comment">Factories that win on exports already put robots at the centre. The gap with late movers shows up in productivity — not in decks.</p>
+      </article>
+
+      <article class="card">
+        <p class="stat">Elec &gt; Auto</p>
+        <p class="stat-sub">128,899 vs 126,088 installs · 2024 · IFR</p>
+        <p class="comment">In 2024, electronics overtook automotive again. Automation follows the supply chains that move — not only the historic plants.</p>
+      </article>
+
+      <article class="card">
+        <p class="stat">3.2×</p>
+        <p class="stat-sub">AU AI · large ÷ small/micro · ~35% ÷ ~11% · 2024–25 · ABS</p>
+        <p class="comment">Only ~12% of Australian businesses use AI — but ~35% of large ones. The gap isn’t tech; it’s size. Mid-market sits in between.</p>
+      </article>
+
+      <article class="card">
+        <p class="stat">+A$6.2bn</p>
+        <p class="stat-sub">AU manuf. IVA abs. · 141,973 − 135,724 m · ABS</p>
+        <p class="comment">Australian manufacturing is still adding real value. The question isn’t whether industry exists here — it’s how fast the mid-market modernises.</p>
+      </article>
+
+      <article class="card">
+        <p class="stat">5.4%</p>
+        <p class="stat-sub">AU manuf. of GDP · 2024 · World Bank · vs DE 18.0% · CN 24.8%</p>
+        <p class="comment">We’re not a factory economy. Every point of manufacturing productivity matters more: little volume, little room for inefficiency.</p>
+      </article>
+    </section>
+
+    <section class="cta">
+      <p class="cta-brand">Corematic</p>
+      <p class="cta-tag">Computer Vision | Machine Learning | Robotics</p>
+      <p class="body">We build turnkey lines — vendor-agnostic, IP stays with you. A plant to modernise? Just reply to this email.</p>
+    </section>
+
+    <footer>
+      Sources: IFR World Robotics 2025 Foreword · ABS · World Bank NV.IND.MANF.ZS<br>
+      Ratios shown with transparent inputs. You’re receiving this as a Corematic contact.
+    </footer>
+  </main>
+</body>
+</html>
