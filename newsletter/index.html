@@ -100,34 +100,14 @@
 
     .score {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
+      gap: 10px 14px;
       margin: 0 0 22px;
       padding: 14px 16px;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: 14px;
-    }
-    .score-bar {
-      flex: 0 0 72px;
-      height: 4px;
-      border-radius: 2px;
-      background: rgba(24, 24, 24, 0.08);
-      overflow: hidden;
-      align-self: center;
-    }
-    .score-bar > i {
-      display: block;
-      height: 100%;
-      width: calc(var(--score) * 1%);
-      background: var(--yellow);
-    }
-    .score-val {
-      font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 22px;
-      margin: 0;
-      line-height: 1;
-      letter-spacing: -0.02em;
     }
     .score-label {
       font-family: "PT Mono", ui-monospace, monospace;
@@ -135,13 +115,40 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted-2);
-      margin: 4px 0 0;
+      margin: 0;
+      width: 100%;
     }
     .score-note {
       margin: 0;
       font-size: 13px;
       color: var(--muted);
       line-height: 1.35;
+      flex: 1 1 12rem;
+    }
+    .score-stars {
+      display: flex;
+      gap: 6px;
+    }
+    .score-stars button {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: 14px;
+      color: var(--ink);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .score-stars button[aria-pressed="true"] {
+      border-color: var(--ink);
+      background: #fff;
+      box-shadow: inset 0 -3px 0 var(--yellow);
+    }
+    .score-stars button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
     }
 
     .eyebrow {
@@ -351,23 +358,26 @@
   <div class="wrap">
     <div class="topbar">
       <p class="meta">
-        <time datetime="2026-09-15">15 Sep 2026</time>
+        <time datetime="2026-09-15">15 September 2026</time>
         <span class="sep">·</span>
-        Week 38
+        Week of 8 to 14 September 2026
         <span class="sep">·</span>
         <span id="read-time">8 min read</span>
       </p>
-      <a class="nav-prev" href="#" aria-disabled="true" title="Previous week edition not published yet">← Week 37</a>
+      <a class="nav-prev" href="/newsletter/archive/2026-W36">Last week</a>
     </div>
 
-    <!-- Score: placeholder until Teddie/Phil supply edition score -->
-    <aside class="score" aria-label="Daily signal score" style="--score: 74">
-      <div>
-        <p class="score-val">74</p>
-        <p class="score-label">Daily signal</p>
+    <!-- Score: 1-5 localStorage only -->
+    <aside class="score" aria-label="Rate this edition" data-score-key="nl-score-2026-W37">
+      <p class="score-label">Your score for this edition</p>
+      <div class="score-stars" role="group" aria-label="Score from 1 to 5">
+        <button type="button" data-score="1" aria-pressed="false">1</button>
+        <button type="button" data-score="2" aria-pressed="false">2</button>
+        <button type="button" data-score="3" aria-pressed="false">3</button>
+        <button type="button" data-score="4" aria-pressed="false">4</button>
+        <button type="button" data-score="5" aria-pressed="false">5</button>
       </div>
-      <div class="score-bar" aria-hidden="true"><i></i></div>
-      <p class="score-note">Composite of this edition’s six frames. Placeholder until Phil locks the score.</p>
+      <p class="score-note">Stored on this device only. No server score.</p>
     </aside>
 
     <header>
@@ -376,7 +386,7 @@
       <p class="lede">World → Australia. Density, demand mix, AI by firm size, IVA lift, thin GDP share: sourced, dated, no pitch up front.</p>
     </header>
 
-    <p class="hook">The world density floor moved. Australia still runs a thin manufacturing slice of GDP. That is the whole story.</p>
+    <p class="hook">Somewhere this week, a plant you compete with will treat as normal what still feels optional on your floor. Not a slogan. Six dated numbers from IFR, ABS and the World Bank. Then a hard close: are you still benchmarking against yesterday's plant?</p>
 
     <nav class="toc" aria-label="Jump to a number">
       <a href="#n1">177 / 10k</a>
@@ -467,6 +477,7 @@
  <p>The six numbers above are one argument in six frames. The world density floor is rising. China already runs multiples of that density. New robot demand is shifting toward fast, high-scrutiny sectors like electronics. At home, AI adoption splits by firm size, mid-market is the grey zone. Manufacturing IVA still grew in absolute dollars. Yet manufacturing remains a thin share of GDP, so every inefficiency hits harder.</p>
  <p>The lazy story is decline. The engaged story is selectivity: keep the capable plants, instrument them, and stop romanticising manual variance as “craft” when it is actually cost. Trust is built when claims are dated and sourced. Passion shows up as care for the line. Fun, for industrial B2B, is the relief of a process that finally behaves.</p>
  <p>If you lead ops or finance, pick one unit this quarter: scrap rate, inspection minutes, changeover time, or unplanned downtime. Instrument it. Improve it. Then decide what capital follows. That sequence beats another strategy offsite.</p>
+ <p>We opened with a simple shock: somewhere this week, a competing plant will treat as normal what still feels optional on your floor. The numbers did not soften that. The close is the same question, now earned: are you still benchmarking against yesterday's plant?</p>
  <div class="cta">
  <p class="tag">Computer Vision | Machine Learning | Robotics</p>
  <p>Turnkey lines, vendor-agnostic, IP stays with you. A plant to modernise? Reply to this email.</p>
@@ -485,20 +496,41 @@
       var bar = document.getElementById("read-progress");
       var rt = document.getElementById("read-time");
       function words() {
-        var t = document.querySelector(".wrap");
-        return (t && t.innerText || "").trim().split(/\s+/).length;
+        var root = document.querySelector(".wrap");
+        return (root && root.innerText || "").trim().split(/\s+/).filter(Boolean).length;
       }
-      var mins = Math.max(1, Math.round(words() / 220));
+      var mins = Math.max(1, Math.round(words() / 200));
       if (rt) rt.textContent = mins + " min read";
 
       function onScroll() {
         var el = document.documentElement;
         var max = el.scrollHeight - el.clientHeight;
-        var p = max > 0 ? (el.scrollTop / max) * 100 : 0;
-        if (bar) bar.style.width = p + "%";
+        var pct = max > 0 ? (el.scrollTop / max) * 100 : 0;
+        if (bar) bar.style.width = pct + "%";
       }
       window.addEventListener("scroll", onScroll, { passive: true });
       onScroll();
+
+      var box = document.querySelector("[data-score-key]");
+      if (box) {
+        var key = box.getAttribute("data-score-key");
+        var buttons = Array.prototype.slice.call(box.querySelectorAll("[data-score]"));
+        function paint(v) {
+          buttons.forEach(function (b) {
+            b.setAttribute("aria-pressed", v && b.getAttribute("data-score") === String(v) ? "true" : "false");
+          });
+        }
+        var saved = null;
+        try { saved = localStorage.getItem(key); } catch (e) {}
+        if (saved && /^[1-5]$/.test(saved)) paint(saved);
+        buttons.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var v = b.getAttribute("data-score");
+            try { localStorage.setItem(key, v); } catch (e) {}
+            paint(v);
+          });
+        });
+      }
     })();
   </script>
 </body>
