@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-AU"><!-- STAMP: v2.6.1-golfi-nits -->
+<html lang="en-AU"><!-- STAMP: v2.7.1-golfi-cuts · 2026-09-16 Kayla · MD articles-v1.md v2.7.1 · no GitHub push · Ph after Golfi re-GO -->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Six numbers you rarely see</title>
   <style>
+
 
     :root {
       --yellow: #FFBD00;
@@ -15,8 +16,6 @@
       --line: rgba(24, 24, 24, 0.12);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
       margin: 0;
       background: var(--bg);
@@ -27,11 +26,6 @@
       font-size: 17px;
     }
     @media (min-width: 640px) { body { font-size: 18px; } }
-    .progress {
-      position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 40;
-      background: rgba(24, 24, 24, 0.06);
-    }
-    .progress > span { display: block; height: 100%; width: 0%; background: var(--yellow); }
     .wrap { max-width: 40rem; margin: 0 auto; padding: 24px 18px 72px; }
     @media (min-width: 640px) { .wrap { padding: 40px 28px 96px; } }
     .meta {
@@ -136,7 +130,7 @@
       border-right: 2px solid var(--ink);
       border-bottom: 2px solid var(--ink);
       transform: rotate(45deg);
-      transition: transform 0.15s ease;
+      
       margin-right: 6px;
     }
     details.box[open] .chev { transform: rotate(225deg); margin-top: 6px; }
@@ -194,10 +188,10 @@
     .essay p { text-align: left; margin: 0 0 12px; }
     .cta {
       margin-top: 18px;
-      padding: 14px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 12px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
     }
     .cta .tag { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
     .score { margin-top: 36px; padding: 16px; background: var(--surface); border-radius: 12px; border: 1px solid var(--line); }
@@ -420,24 +414,127 @@
 
   /* v510 callouts off */
 .opinion,.takeaway,.fact-stitch,.define{font-style:normal!important;border:none!important;background:transparent!important;padding-left:0!important;}
-</style>
+
+    /* STAMP: v2.7-essay-rhythm · Kayla 2026-09-16
+       Justify body prose. Headings/labels stay left.
+       Weekly study: taller leading, more para air, 4 section beats, narrower measure.
+       Constraints kept: no mid-page TOC, no callout cards, no box photos, no motion. */
+    .hook,
+    .lede,
+    .chapter-body p,
+    .essay p {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+    h1, h2, h3,
+    .essay-label, .essay-sub, .essay h2,
+    .box-title, .box-num, .box-kicker, .box-summary,
+    .sources, .meta, .cta, .score-label, .score-note, footer {
+      text-align: left !important;
+    }
+
+    .chapter-body p {
+      margin: 0 0 14px;
+      line-height: 1.62;
+    }
+    .chapter-body p:last-child { margin-bottom: 0; }
+
+    .essay {
+      max-width: 34rem;
+    }
+    .essay p {
+      margin: 0 0 1.15em;
+      line-height: 1.72;
+    }
+    .essay-sub {
+      display: block;
+      margin: 2.1em 0 0.85em;
+      padding: 0.85em 0 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.3;
+      text-align: left !important;
+    }
+    .essay-sub:first-of-type {
+      margin-top: 1.4em;
+    }
+    .essay h2 {
+      margin: 0 0 0.4em;
+      line-height: 1.2;
+    }
+    .essay-label { margin-bottom: 6px; }
+
+    /* Boxes: real inner padding, text stays inside */
+    .box-summary { padding: 18px 18px !important; }
+    details.box .chapter-body,
+    details.box .box-panel {
+      padding: 4px 18px 18px !important;
+    }
+    details.box > .sources {
+      padding: 0 18px 18px !important;
+    }
+
+    /* Bold/normal: inherit tracking; keep a real word space */
+    strong {
+      font-weight: 600;
+      letter-spacing: inherit;
+      word-spacing: normal;
+    }
+    strong::before, strong::after { /* no extra ghost space */ }
+
+    /* Kill leftover callout chrome if classes linger */
+    .takeaway, .opinion, .fact-stitch, .callout {
+      margin: 0 0 1.15em !important;
+      padding: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      font-style: normal !important;
+    }
+    nav.toc { display: none !important; }
+
+  
+
+    /* STAMP: v2.7.1-golfi-cuts · 2026-09-16 Kayla
+       Natural-sentence boxes from MD; study regenerated; 4 beats only;
+       CTA no card; zero motion; justify kept. */
+    html { scroll-behavior: auto; }
+    .progress { display: none !important; }
+    .chev { transition: none !important; }
+    .cta {
+      margin-top: 18px !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+    }
+    .essay-label {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: var(--muted);
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+  </style>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><span id="read-progress"></span></div>
   <div class="wrap">
-    <p class="meta"><time datetime="2026-09-15">15 September 2026</time><span class="sep"> · </span><span id="read-time">21 min read</span></p>
+    <p class="meta"><time datetime="2026-09-15">15 September 2026</time><span class="sep"> · </span><span id="read-time">11 min read</span></p>
 
     <header>
       <h1>Six numbers you rarely see</h1>
-      <p class="lede">IFR-class industrial robot defined. Each figure: value, unit, year, source. Then one weekly take.</p>
     </header>
 
-    <p class="hook">Six factory figures. Each opens with value, unit, year, and source, then prose. One weekly take at the end.
-
-Industrial robot, in this edition, means an IFR-class programmable arm or cell on a production floor used to weld, handle, assemble, machine-tend, or palletise. It does not mean a chatbot, RPA script, vacuum, phone, or vague &quot;AI robot.&quot;</p>
+    <p class="hook">Six factory figures. Each opens with value, unit, year, and source, then prose. One weekly study at the end.</p>
+    <p class="lede">Industrial robot, in this edition, means an IFR-class programmable arm or cell on a production floor used to weld, handle, assemble, machine-tend, or palletise. It does not mean a chatbot, RPA script, vacuum, phone, or vague "AI robot."</p>
 
 <div class="boxes">
-        <section class="box-wrap" id="n1">
+    <section class="box-wrap" id="n1">
       <details class="box" id="n1-acc">
       <summary class="box-summary">
         <span class="box-summary-left">
@@ -451,12 +548,12 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         <span class="chev" aria-hidden="true"></span>
       </summary>
 <div class="chapter-body">
-<p><strong>177</strong> industrial robots per <strong>10,000</strong> manufacturing employees ·<strong>2024</strong> (163 in 2023) · IFR World Robotics 2025 Foreword (data year 2024).</p>
-<p>Same source, same year: new installations <strong>542,076</strong> (+0.1%); operational stock <strong>4,663,773</strong> (+8.9%); top densities Korea <strong>1,220</strong>, Singapore <strong>818</strong>, China <strong>567</strong>, Germany <strong>449</strong>, Japan <strong>446</strong>.</p>
+<p>World manufacturing robot density reached <strong>177</strong> industrial robots per <strong>10,000</strong> manufacturing employees in <strong>2024</strong>, up from 163 in 2023 (IFR World Robotics 2025 Foreword, data year 2024).</p>
+<p>New installations were <strong>542,076</strong> that year, up <strong>0.1%</strong>. Operational stock reached <strong>4,663,773</strong>, up <strong>8.9%</strong>. The highest densities were Korea <strong>1,220</strong>, Singapore <strong>818</strong>, China <strong>567</strong>, Germany <strong>449</strong>, and Japan <strong>446</strong> (same source, same year).</p>
 <p>Density is how many IFR-class industrial arms sit among people employed in manufacturing. It is a stock ratio, not a sales trophy for one season. That is why the companion pair is the story: new installs almost flat, operational stock still up nearly nine percent. Arms bought earlier kept running shifts. A calm order year is not a calm competitive floor.</p>
-<p>Sites that deferred automation did not get a pause button. They competed against a larger installed base that continued to weld, handle, and ship. When a slide says &quot;robots,&quot; force the IFR-class definition into the room. If the slide means software demo or consumer gadget, it is not speaking this dataset.</p>
+<p>Sites that deferred automation did not get a pause button. They competed against a larger installed base that continued to weld, handle, and ship. When a slide says "robots," force the IFR-class definition into the room. If the slide means software demo or consumer gadget, it is not speaking this dataset.</p>
 <p>Waiting for a loud spike in new installations feels safer than funding line work while the order book looks quiet. The stock series contradicts that comfort. Quiet orders and a denser floor can sit in the same year. Denser plants also set the reference for what normal control looks like on scrap and changeover, even when nobody says the word density in the meeting.</p>
-<p>A useful test in any CapEx review is simple. Ask which series the plan is watching. If the answer is only &quot;new installs this year,&quot; the room is underweighting stock and density. If the answer is density without a named line and a baseline, the room has a ratio and no owner. Both are incomplete. Name the unit, the owner, and the thirty-to-sixty-day window before anyone argues brand of arm.</p>
+<p>A useful test in any CapEx review is simple. Ask which series the plan is watching. If the answer is only "new installs this year," the room is underweighting stock and density. If the answer is density without a named line and a baseline, the room has a ratio and no owner. Both are incomplete. Name the unit, the owner, and the thirty-to-sixty-day window before anyone argues brand of arm.</p>
 </div>
 <p class="sources"><strong>Sources</strong> IFR World Robotics 2025 Foreword (calendar year 2024).</p>
 </details>
@@ -466,7 +563,7 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
       <summary class="box-summary">
         <span class="box-summary-left">
           <svg class="box-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="16" rx="1" fill="#181818"/><rect x="14" y="10" width="6" height="10" rx="1" fill="none" stroke="#181818" stroke-width="1.8"/><rect x="14" y="18" width="6" height="2" fill="#FFBD00"/></svg>
-          <span class="box-kicker">02 · China vs world</span>
+          <span class="box-kicker">02 · China scale</span>
         </span>
         <span class="box-summary-main">
           <span class="box-num">3.2×</span>
@@ -475,11 +572,11 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         <span class="chev" aria-hidden="true"></span>
       </summary>
 <div class="chapter-body">
-<p><strong>567</strong> vs <strong>177</strong>≈<strong>3.2×</strong>· China manufacturing robot density versus world density ·<strong>2024</strong>· IFR World Robotics 2025 Foreword.</p>
-<p>IFR press 25 Sep 2025 (data year 2024): China <strong>54%</strong> of world deployments; <strong>295,045</strong> installations (record); operational stock <strong>&gt;2,027,000</strong>; domestic suppliers <strong>57%</strong> (about <strong>28%</strong> a decade earlier; <strong>47% to 57%</strong> year-on-year).</p>
-<p>The rare angle is not &quot;China has more robots.&quot; It is a local supplier loop. Density is high, deployments dominate, stock sits above two million, and domestic firms now win most Chinese installs. That builds maintenance practice and uptime competition on the ground. Quote pressure follows process capability. Specs tighten. Variance gets less patience, even for exporters and suppliers inside audited chains who never visit those plants.</p>
+<p>China's manufacturing robot density was <strong>567</strong> per 10,000 manufacturing employees in <strong>2024</strong>, about <strong>3.2×</strong> the world figure of <strong>177</strong> (IFR World Robotics 2025 Foreword).</p>
+<p>China accounted for <strong>54%</strong> of world deployments that year, with <strong>295,045</strong> installations (a record) and operational stock above <strong>2,027,000</strong>. Domestic suppliers won <strong>57%</strong> of Chinese installs, up from about <strong>28%</strong> a decade earlier and from <strong>47%</strong> the year before (IFR press 25 Sep 2025, data year 2024).</p>
+<p>The rare angle is not "China has more robots." It is a local supplier loop. Density is high, deployments dominate, stock sits above two million, and domestic firms now win most Chinese installs. That builds maintenance practice and uptime competition on the ground. Quote pressure follows process capability. Specs tighten. Variance gets less patience, even for exporters and suppliers inside audited chains who never visit those plants.</p>
 <p>Copying a headline density without a named floor owner and a baseline buys theatre, not control. A better first question: what would a thirty-day scrap or downtime baseline reveal before anyone picks a brand of arm? A pilot cell with no owner is easy to approve and hard to learn from. That is why it fails as evidence.</p>
-<p>Control does not require copying another country&#x27;s density slide. It requires baseline, owner, then capital.</p>
+<p>Control does not require copying another country's density slide. It requires baseline, owner, then capital.</p>
 </div>
 <p class="sources"><strong>Sources</strong> IFR World Robotics 2025 Foreword; IFR press 25 Sep 2025 (calendar year 2024).</p>
 </details>
@@ -489,7 +586,7 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
       <summary class="box-summary">
         <span class="box-summary-left">
           <svg class="box-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="8" height="10" rx="1.2" fill="none" stroke="#181818" stroke-width="1.8"/><path d="M5 10h2M5 13h2" stroke="#FFBD00" stroke-width="1.8"/><path d="M11 12h2.5" stroke="#181818" stroke-width="1.8"/><path d="M16 14h5l-.8-3.2h-2.6z" fill="none" stroke="#181818" stroke-width="1.6"/><circle cx="17.2" cy="14.3" r="1" fill="#FFBD00"/><circle cx="19.8" cy="14.3" r="1" fill="#181818"/></svg>
-          <span class="box-kicker">03 · Elec over auto</span>
+          <span class="box-kicker">03 · Electronics over automotive</span>
         </span>
         <span class="box-summary-main">
           <span class="box-num">Elec &gt; Auto</span>
@@ -498,13 +595,14 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         <span class="chev" aria-hidden="true"></span>
       </summary>
 <div class="chapter-body">
-<p><strong>128,899</strong> electronics vs <strong>126,088</strong> automotive new industrial robot installations ·<strong>2024</strong>· IFR World Robotics 2025 Foreword / Exec Summary.</p>
-<p>Gap <strong>~2,800</strong> units. Shares of world installs: electronics <strong>24%</strong> (+1 pp), automotive <strong>23%</strong> (-2 pp). Metal and machinery: <strong>88,777</strong> units (<strong>+16%</strong> year-on-year), <strong>16%</strong> of installs, third customer, CAGR about <strong>+12%</strong> from 2019 to 2024 (IFR Exec Summary). New deployments by region: Asia <strong>74%</strong>, Europe <strong>16%</strong>, Americas <strong>9%</strong>. About <strong>14%</strong> of installs had no industry reported (-3 pp). Also: IFR press 25 Sep 2025. Germany automotive robots <strong>6,932</strong> (<strong>-25%</strong> year-on-year); automotive share of German installs <strong>26%</strong>· 2024 · IFR press Europe 25 Sep 2025. Food and beverage industrial robot installs <strong>+42%</strong> year-on-year · 2024 · IFR Press Conference 25 Sep 2025 (slide: general industries compensate).</p>
+<p>Electronics took <strong>128,899</strong> new industrial robot installations in <strong>2024</strong>. Automotive took <strong>126,088</strong> (IFR World Robotics 2025 Foreword / Exec Summary). The gap is about <strong>2,800</strong> units.</p>
+<p>Electronics was <strong>24%</strong> of world installs, up 1 percentage point. Automotive was <strong>23%</strong>, down 2 percentage points. Metal and machinery bought <strong>88,777</strong> units, up <strong>16%</strong> year-on-year. That is <strong>16%</strong> of installs and the third customer, with CAGR about <strong>+12%</strong> from 2019 to 2024 (IFR Exec Summary). Asia took <strong>74%</strong> of new deployments, Europe <strong>16%</strong>, the Americas <strong>9%</strong>. About <strong>14%</strong> of installs had no industry reported, down 3 percentage points.</p>
+<p>Germany installed <strong>6,932</strong> automotive robots in <strong>2024</strong>, down <strong>25%</strong> year-on-year. Automotive was <strong>26%</strong> of German installs (IFR press Europe 25 Sep 2025). Food and beverage industrial robot installs rose <strong>+42%</strong> year-on-year in <strong>2024</strong> (IFR Press Conference 25 Sep 2025, slide: general industries compensate).</p>
 <p>Automotive remains large. Electronics took the crown by a thin margin. That is a razor handover, not an electronics tidal wave. It is still enough to break a planning habit that says serious industrial robotics money only follows car plants as they looked a decade ago.</p>
-<p>Metal and machinery rising fast as the third buyer says demand is broader than one glamour sector. Asia&#x27;s 74% of new deployments keeps geography honest about where new arms go first. High-mix work with hard quality gates and painful changeovers is where much of that order flow is pointing. CapEx folklore often treats the last big auto line someone toured as the map of all serious robotics. The install mix says otherwise.</p>
-<p>If a plant&#x27;s product mix looks more like high-mix electronics or metal/machinery than a classic high-volume body shop, the &quot;we are not automotive enough&quot; veto is often folklore, not data. The better question is where quality gates and changeovers hurt most, and whether an IFR-class cell can own a unit finance will audit. That question travels across sectors. The auto-only map does not.</p>
+<p>Metal and machinery rising fast as the third buyer says demand is broader than one glamour sector. Asia's share of new deployments keeps geography honest about where new arms go first. High-mix work with hard quality gates and painful changeovers is where much of that order flow is pointing. CapEx folklore often treats the last big auto line someone toured as the map of all serious robotics. The install mix says otherwise.</p>
+<p>If a plant's product mix looks more like high-mix electronics or metal/machinery than a classic high-volume body shop, the "we are not automotive enough" veto is often folklore, not data. The better question is where quality gates and changeovers hurt most, and whether an IFR-class cell can own a unit finance will audit. That question travels across sectors. The auto-only map does not.</p>
 </div>
-<p class="sources"><strong>Sources</strong> IFR World Robotics 2025 Foreword / Exec Summary; IFR press 25 Sep 2025 (calendar year 2024).</p>
+<p class="sources"><strong>Sources</strong> IFR World Robotics 2025 Foreword / Exec Summary; IFR press 25 Sep 2025 (calendar year 2024); IFR Press Conference 25 Sep 2025.</p>
 </details>
     </section>
     <section class="box-wrap" id="n4">
@@ -512,18 +610,18 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
       <summary class="box-summary">
         <span class="box-summary-left">
           <svg class="box-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="13" width="7" height="7" rx="1" fill="none" stroke="#181818" stroke-width="1.8"/><rect x="13" y="4" width="8" height="16" rx="1" fill="none" stroke="#181818" stroke-width="1.8"/><path d="M15 8h4M15 12h4M15 16h4" stroke="#FFBD00" stroke-width="1.8"/></svg>
-          <span class="box-kicker">04 · AI size gap</span>
+          <span class="box-kicker">04 · Australia AI by firm size</span>
         </span>
         <span class="box-summary-main">
-          <span class="box-num">3.2×</span>
+          <span class="box-num">12%</span>
           <span class="box-title">Australia AI by firm size</span>
         </span>
         <span class="chev" aria-hidden="true"></span>
       </summary>
 <div class="chapter-body">
-<p><strong>~12%</strong> of Australian businesses used AI · large <strong>~35%</strong>· medium <strong>~22%</strong>· small/micro <strong>~11%</strong>· FY <strong>2024-25</strong>· ABS Business Characteristics Survey (media 25 Jun 2026).</p>
-<p>Medium firms: <strong>~22%</strong> in FY 2024-25, up from <strong>~3%</strong> in 2021-22.</p>
-<p>Reported use is not controlled process. A site can tick &quot;uses AI&quot; and still lose hours to escapes, slow inspection, or unplanned stops. Digital tools sit inside physical flows; if the floor unit is unnamed, the tool story is incomplete. Ease of buying a tool is not ease of changing a line. A visible AI line item can land while the floor still owns the same changeover pain. Bring it back to a unit a plant can own.</p>
+<p>About <strong>12%</strong> of Australian businesses used AI in FY <strong>2024-25</strong> (ABS Business Characteristics Survey, media 25 Jun 2026). Use was about <strong>35%</strong> among large firms, <strong>22%</strong> among medium firms, and <strong>11%</strong> among small and micro firms.</p>
+<p>Medium-firm use rose from about <strong>3%</strong> in 2021-22 to about <strong>22%</strong> in FY 2024-25.</p>
+<p>Reported use is not controlled process. A site can tick "uses AI" and still lose hours to escapes, slow inspection, or unplanned stops. Digital tools sit inside physical flows; if the floor unit is unnamed, the tool story is incomplete. Ease of buying a tool is not ease of changing a line. A visible AI line item can land while the floor still owns the same changeover pain. Bring it back to a unit a plant can own.</p>
 </div>
 <p class="sources"><strong>Sources</strong> ABS BCS / media 25 Jun 2026 (FY 2024-25).</p>
 </details>
@@ -533,7 +631,7 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
       <summary class="box-summary">
         <span class="box-summary-left">
           <svg class="box-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19h18" stroke="#181818" stroke-width="1.8"/><path d="M5 15l5-6 3 3 6-7" fill="none" stroke="#181818" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 5h4v4" fill="none" stroke="#FFBD00" stroke-width="1.8"/><circle cx="5" cy="15" r="1.5" fill="#FFBD00"/></svg>
-          <span class="box-kicker">05 · AU IVA lift</span>
+          <span class="box-kicker">05 · Australia manufacturing IVA</span>
         </span>
         <span class="box-summary-main">
           <span class="box-num">+A$6.2bn</span>
@@ -542,11 +640,11 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         <span class="chev" aria-hidden="true"></span>
       </summary>
 <div class="chapter-body">
-<p><strong>+A$6.2 billion</strong> absolute rise in manufacturing industry value added · A$141,973m after A$135,724m (<strong>+4.6%</strong>) · employment end June <strong>901,000</strong> (<strong>+0.2%</strong>) · FY <strong>2024-25</strong> vs prior · ABS Australian Industry.</p>
-<p>Same year: manufacturing multifactor productivity <strong>-2.9%</strong> (ABS Estimates of Industry Multifactor Productivity, FY 2024-25). Manufacturing expenditure <strong>+7.8%</strong> (A$38.3bn); purchases <strong>+8.6%</strong>; wages and salaries <strong>+5.2%</strong> (A$3.8bn) (Australian Industry 2024-25).</p>
-<p>Value added rose. Jobs edged up. Multifactor productivity fell. Spending and purchases rose. That is money through the sector without a matching efficiency gift. Food product manufacturing earnings <strong>+7.8%</strong> (A$815m) against division earnings <strong>+1.6%</strong> (A$753m) in the same ABS Australian Industry FY <strong>2024-25</strong> release: the IVA lift is real and uneven. It undercuts a funeral narrative and still leaves any given line unproven on scrap, changeover, and downtime.</p>
-<p>Rising IVA is also a cash-flow window. Sensing, data, industrial robotics, and process discipline are easier to fund in that window than after it closes. Delaying a baseline because &quot;things feel okay&quot; while IVA is up risks paying later when the window closes and every dollar of CapEx fights a colder room. Trust in the numbers comes from naming the unit and the owner, not from a national cheer.</p>
-<p>The IVA and MFP pair is useful in one meeting sentence. Money moved through manufacturing. Measured multifactor productivity for manufacturing did not gift a matching efficiency lift in that year. So any plant that claims &quot;the sector is fine, we can wait&quot; is mixing a national cash-flow story with a plant control story. They are not the same. Use the cash-flow window to buy a baseline and a sequenced cell, or accept that waiting is a choice with a cost.</p>
+<p>Australian manufacturing industry value added rose <strong>A$6.2 billion</strong> in FY <strong>2024-25</strong>, from A$135,724 million to A$141,973 million, or <strong>+4.6%</strong> (ABS Australian Industry). Employment at end June was <strong>901,000</strong>, up <strong>0.2%</strong>.</p>
+<p>The same year, manufacturing multifactor productivity fell <strong>2.9%</strong> (ABS Estimates of Industry Multifactor Productivity, FY 2024-25). Manufacturing expenditure rose <strong>7.8%</strong> to A$38.3 billion. Purchases rose <strong>8.6%</strong>. Wages and salaries rose <strong>5.2%</strong>, or A$3.8 billion (ABS Australian Industry 2024-25).</p>
+<p>Value added rose. Jobs edged up. Multifactor productivity fell. Spending and purchases rose. That is money through the sector without a matching efficiency gift. Food product manufacturing earnings rose <strong>7.8%</strong>, or A$815 million, against division earnings up <strong>1.6%</strong>, or A$753 million, in the same ABS Australian Industry FY <strong>2024-25</strong> release: the IVA lift is real and uneven. It undercuts a funeral narrative and still leaves any given line unproven on scrap, changeover, and downtime.</p>
+<p>Rising IVA is also a cash-flow window. Sensing, data, industrial robotics, and process discipline are easier to fund in that window than after it closes. Delaying a baseline because "things feel okay" while IVA is up risks paying later when the window closes and every dollar of CapEx fights a colder room. Trust in the numbers comes from naming the unit and the owner, not from a national cheer.</p>
+<p>The IVA and MFP pair is useful in one meeting sentence. Money moved through manufacturing. Measured multifactor productivity for manufacturing did not gift a matching efficiency lift in that year. So any plant that claims "the sector is fine, we can wait" is mixing a national cash-flow story with a plant control story. They are not the same. Use the cash-flow window to buy a baseline and a sequenced cell, or accept that waiting is a choice with a cost.</p>
 </div>
 <p class="sources"><strong>Sources</strong> ABS Australian Industry 2024-25; ABS Estimates of Industry Multifactor Productivity FY 2024-25.</p>
 </details>
@@ -556,7 +654,7 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
       <summary class="box-summary">
         <span class="box-summary-left">
           <svg class="box-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="4" height="14" rx="1" fill="#181818"/><rect x="10" y="9" width="4" height="10" rx="1" fill="#181818"/><rect x="16" y="14" width="4" height="5" rx="1" fill="#FFBD00"/></svg>
-          <span class="box-kicker">06 · Thin GDP share</span>
+          <span class="box-kicker">06 · Thin manufacturing share of GDP</span>
         </span>
         <span class="box-summary-main">
           <span class="box-num">5.4%</span>
@@ -565,59 +663,55 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         <span class="chev" aria-hidden="true"></span>
       </summary>
 <div class="chapter-body">
-<p><strong>5.4%</strong> of Australian GDP from manufacturing ·<strong>2024</strong>· World Bank NV.IND.MANF.ZS · vs Germany <strong>18.0%</strong>· China <strong>24.8%</strong> (2024).</p>
-<p>Same ABS year as the IVA lift: mining IVA <strong>-16.0%</strong> while manufacturing IVA <strong>+4.6%</strong> (Australian Industry FY 2024-25). Europe installed <strong>~85,006</strong> industrial robots in 2024 (<strong>-8%</strong>); EU ~<strong>80%</strong>; Germany <strong>26,982</strong> (<strong>-5%</strong>, ~<strong>32%</strong> of Europe) · IFR press 25 Sep 2025.</p>
+<p>Manufacturing was <strong>5.4%</strong> of Australian GDP in <strong>2024</strong>, against <strong>18.0%</strong> in Germany and <strong>24.8%</strong> in China (World Bank NV.IND.MANF.ZS, 2024).</p>
+<p>In the same ABS year as the IVA lift, mining IVA fell <strong>16.0%</strong> while manufacturing IVA rose <strong>4.6%</strong> (Australian Industry FY 2024-25). Europe installed about <strong>85,006</strong> industrial robots in 2024, down <strong>8%</strong>. The EU was about <strong>80%</strong> of that. Germany installed <strong>26,982</strong>, down <strong>5%</strong>, about <strong>32%</strong> of Europe (IFR press 25 Sep 2025).</p>
 <p>Australia is not a factory-heavy economy. That is structure. Less manufacturing volume means less cushion for waste. Scrap and stoppages hit customer risk faster when manufacturing is a thin slice of national output.</p>
 <p>Mining can fall hard in a year while manufacturing still grows and still remain a thin share of GDP. Europe cycling installs down shows thick bases adjust timing; they do not treat floor control as optional decoration. Nearshoring talk in Europe is not the same thing as a 2024 robot-install boom there. A strong commodity year in memory can hide how little forgiveness a thin manufacturing share leaves for uncontrolled downtime. The relief that matters is a line that stops surprising you.</p>
-<p>Thin share also changes how leadership should talk about keeping a weak line &quot;just in case.&quot; That costs more when the national manufacturing cushion is thin. Habit lines that never earn their scrap and downtime metrics are expensive insurance. Measure them. Keep what earns. Retire what only survives on nostalgia.</p>
+<p>Thin share also changes how leadership should talk about keeping a weak line "just in case." That costs more when the national manufacturing cushion is thin. Habit lines that never earn their scrap and downtime metrics are expensive insurance. Measure them. Keep what earns. Retire what only survives on nostalgia.</p>
 </div>
 <p class="sources"><strong>Sources</strong> World Bank NV.IND.MANF.ZS (2024); ABS Australian Industry FY 2024-25; IFR press 25 Sep 2025.</p>
 </details>
     </section>
+</div>
 
-    </div>
 <section class="essay" id="essay" aria-labelledby="essay-title">
-<p class="essay-label">This week's take</p>
+<p class="essay-label">This week's take · Closing study · ~11 min</p>
 <h2 id="essay-title">Run the plants you have</h2>
-<h3 class="essay-sub">Closing study · ~12 min</h3>
-<p>#### 1. Floor climate</p>
-<p>The six boxes above are the labelled evidence. This study does not tour them again as a menu. It reads them as one floor climate and asks what a plant does next.</p>
-<p>Start with tempo. World industrial robot density reached <strong>177</strong> per <strong>10,000</strong> manufacturing employees in <strong>2024</strong>, up from 163, while new installations were <strong>542,076</strong> (+0.1%) and operational stock <strong>4,663,773</strong> (+8.9%) (IFR World Robotics 2025 Foreword, data year 2024). That pair is the climate: a calm order year for new arms can sit on top of a denser competitive floor. Arms bought earlier kept welding, handling, assembling, machine-tending, and palletising. Waiting for a louder install year is not a pause button. It is a choice to let other plants&#x27; installed base keep compounding while your unnamed scrap and changeover stay unnamed.</p>
-<p>Buyer mix confirms the same climate from another angle. Electronics took <strong>128,899</strong> new industrial robot installations against automotive <strong>126,088</strong> in <strong>2024</strong>, a gap of about <strong>2,800</strong> units (IFR World Robotics 2025 Foreword / Exec Summary). Metal and machinery reached <strong>88,777</strong> units (<strong>+16%</strong> year-on-year), <strong>16%</strong> of installs, third customer, CAGR about <strong>+12%</strong> from 2019 to 2024. Food and beverage industrial robot installs rose <strong>+42%</strong> year-on-year in <strong>2024</strong> (IFR Press Conference 25 Sep 2025, slide on general industries compensating). Asia took <strong>74%</strong> of new deployments. Germany, a thick auto base, still saw automotive robots fall to <strong>6,932</strong> units (<strong>-25%</strong> year-on-year), with automotive at <strong>26%</strong> of German installs (IFR press Europe 25 Sep 2025, data year 2024). The mental model that serious industrial robotics CapEx only follows last decade&#x27;s car cycle is already late. High-mix work with hard quality gates, hygiene constraints, and painful changeovers is where much of the order flow is pointing.</p>
-<p>China is not a postcard in that climate. Density <strong>567</strong> versus world <strong>177</strong> (about <strong>3.2×</strong>), <strong>54%</strong> of world deployments, about <strong>295,045</strong> installations, stock above <strong>2,027,000</strong>, domestic suppliers <strong>57%</strong> (IFR World Robotics 2025 Foreword; IFR press 25 Sep 2025, data year 2024). The useful reading is a supplier and uptime loop that tightens specs and quotes, including for exporters who never visit those plants. Control still does not require copying a density slide. It requires a unit, an owner, and a baseline before capital.</p>
-<p>What changes on a real floor when that climate is true? Quote packages get less patient on variance. Customer audits ask for process evidence, not intention slides. Competitors who bought cells earlier keep learning maintenance and uptime on live product. Your board can still be debating whether &quot;this year is quiet for robots&quot; while those competitors ship. The IFR stock series is the reminder that quiet and idle are not synonyms.</p>
-<p>Metal and machinery at <strong>88,777</strong> units and <strong>+16%</strong>, plus food and beverage at <strong>+42%</strong>, also change internal storytelling. Leaders who only tour automotive references will under-weight the lines where changeover, hygiene, and mixed packs actually hurt. The install data is already voting for general industry. CapEx folklore that waits for a classic body-shop cycle is arguing with the order book. Asia&#x27;s <strong>74%</strong> of new deployments keeps geography honest. If your customers and competitors source, assemble, or benchmark against Asian process expectations, the density and mix numbers above are not distant colour. They show up as tighter variance tolerance in the next quote. Europe installing fewer arms in 2024 does not cancel that. It shows thick manufacturing bases can cycle CapEx timing without treating floor control as optional decoration.</p>
-<p>Industrial robot, throughout, means an IFR-class programmable arm or cell on a production floor. It does not mean a chatbot, RPA script, vacuum, phone, or vague &quot;AI robot.&quot;</p>
-<p>#### 2. Australia against that climate</p>
-<p>Australian manufacturing is not outside the climate. It sits inside it with a thin cushion and a messy productivity story.</p>
-<p>Manufacturing industry value added rose <strong>+A$6.2 billion</strong> absolute in FY <strong>2024-25</strong> (A$141,973m after A$135,724m, <strong>+4.6%</strong>), with employment end June <strong>901,000</strong> (<strong>+0.2%</strong>) (ABS Australian Industry). The same year, manufacturing multifactor productivity fell <strong>-2.9%</strong> (ABS Estimates of Industry Multifactor Productivity). Manufacturing expenditure rose <strong>+7.8%</strong> (A$38.3bn). Purchases rose <strong>+8.6%</strong>. Wages and salaries rose <strong>+5.2%</strong> (A$3.8bn) (ABS Australian Industry FY <strong>2024-25</strong>). Keep the labels distinct: expenditure <strong>+7.8%</strong> is not the same series as food product manufacturing earnings <strong>+7.8%</strong> (A$815m) against division earnings <strong>+1.6%</strong> (A$753m) in the same ABS Australian Industry release. Money moved through the sector. Measured multifactor productivity did not gift a matching efficiency lift. Earnings strength was uneven, with food product manufacturing carrying a large share of the division&#x27;s earnings lift.</p>
-<p>Reported AI use does not close that gap by itself. About <strong>~12%</strong> of Australian businesses used AI in FY <strong>2024-25</strong>, large <strong>~35%</strong>, medium <strong>~22%</strong> (from <strong>~3%</strong> in 2021-22), small/micro <strong>~11%</strong> (ABS Business Characteristics Survey, media 25 Jun 2026). A tick-box is not line control. A licence can land while inspection minutes and changeover stay exactly where they were.</p>
-<p>Manufacturing was <strong>5.4%</strong> of Australian GDP in <strong>2024</strong> versus Germany <strong>18.0%</strong> and China <strong>24.8%</strong> (World Bank NV.IND.MANF.ZS). In the same ABS year as the IVA lift, mining IVA fell <strong>-16.0%</strong> while manufacturing IVA rose <strong>+4.6%</strong>. Europe installed about <strong>85,006</strong> industrial robots in 2024 (<strong>-8%</strong>); nearshoring talk is not the same thing as a European install boom that year (IFR press 25 Sep 2025). Thin share of GDP means less volume to absorb scrap and stoppages. Customer risk arrives faster. Habit lines kept &quot;just in case&quot; cost more than leaders admit when the national manufacturing cushion is thin.</p>
-<p>The wage and productivity pair deserves a plain reading. Wages and salaries <strong>+5.2%</strong> with employment only <strong>+0.2%</strong> means the cost of running manufacturing labour rose faster than headcount. Multifactor productivity <strong>-2.9%</strong> means measured efficiency did not offset that. Expenditure and purchases also rose. None of that forbids automation. It forbids pretending that a rising IVA line is proof the plant is under control. IVA can rise while scrap, escapes, and downtime still own the week.</p>
-<p>Food product earnings <strong>+7.8%</strong> (A$815m) against division earnings <strong>+1.6%</strong> (A$753m) sharpens the same point. The division can look only mildly better on earnings while one sub-sector carries most of the lift. A plant outside that earnings engine should not borrow food&#x27;s story as comfort. A plant inside it should not treat earnings strength as permission to leave changeover and quality gates unnamed. Either way, the unit on the floor still has to be chosen.</p>
-<p>Peers with thicker manufacturing shares of GDP can hide more waste inside volume. Australia cannot. That is the structural contrast with Germany and China in the World Bank series, and it is why European install declines do not license local complacency. Thick bases adjust timing. Thin bases pay faster for uncontrolled hours.</p>
-<p>Put the contrast in one sentence. Peers and customers are living a climate of compounding stock, shifting robot demand, and tighter process expectations, while Australian manufacturing can look cash-healthy in IVA terms and still be less productive, more expensive to run on wages, and thinly cushioned at the national level.</p>
+<h3 class="essay-sub">1 · Floor climate</h3>
+<p>The six boxes above already labelled the climate. This study does not tour those figures again. It asks what a plant does next once stock can compound while new orders look calm, process pressure travels through specs, buyer mix leaves last decade's auto map, Australian manufacturing can add value without a productivity gift, and a thin share of national output leaves little room for unnamed downtime.</p>
+<p>Start with tempo. Waiting for a louder install year is not a pause button. It is a choice to let other plants' installed base keep compounding while scrap and changeover stay unnamed. Arms bought earlier keep welding, handling, assembling, machine-tending, and palletising. Quiet and idle are not synonyms. A board can still be debating whether "this year is quiet for robots" while those competitors ship.</p>
+<p>What changes on a real floor when that climate is true? Quote packages get less patient on variance. Customer audits ask for process evidence, not intention slides. Competitors who bought cells earlier keep learning maintenance and uptime on live product. The China box already described a supplier and uptime loop. The useful reading is not a postcard. It is tighter specs and less patience on variance, including for exporters who never visit those plants. Control still does not require copying a density slide. It requires a unit, an owner, and a baseline before capital.</p>
+<p>The broader install mix changes internal storytelling. Leaders who only tour automotive references will under-weight the lines where changeover, hygiene, and mixed packs actually hurt. The install data is already voting for general industry. CapEx folklore that waits for a classic body-shop cycle is arguing with the order book. If customers and competitors source, assemble, or benchmark against Asian process expectations, the mix is not distant colour. It shows up as tighter variance tolerance in the next quote. Europe installing fewer arms in 2024 does not cancel that. Thick manufacturing bases can cycle CapEx timing without treating floor control as optional decoration.</p>
+<p>Tempo also changes how a plant should hear vendor language. If the pitch opens on a country chart or a density league table, ask for the unit the cell would own on this floor. If the pitch opens on AI, ask which physical series would move in thirty to sixty days. If the pitch opens on a quieter install year as a reason to wait, point back to the stock-and-density climate already labelled and ask what unnamed scrap is costing this quarter. The climate does not need to be re-cited figure by figure to do that job. It needs to be enforced in the room.</p>
+<p>The same climate changes hiring and training talk. A plant that defers cells while competitors keep running them is also deferring maintenance skill. Uptime knowledge sits in the installed base. It does not arrive as a PDF with the next brochure. That is one reason a supplier loop with huge stock and high domestic share matters even when the plant never relocates: the people who live those cells get more hours on live product. Waiting does not preserve optionality. It preserves a skill gap.</p>
+<p>Industrial robot, throughout, means an IFR-class programmable arm or cell on a production floor. It does not mean a chatbot, RPA script, vacuum, phone, or vague "AI robot."</p>
+<h3 class="essay-sub">2 · Australia against that climate</h3>
+<p>Australian manufacturing is not outside the climate. It sits inside it with a thin cushion and a messy productivity story. The IVA, AI, and GDP-share boxes already carry the national labels. The extra ABS detail is what changes the reading.</p>
+<p>Manufacturing labour costs rose faster than headcount in the same year, while multifactor productivity fell and expenditure and purchases rose. None of that forbids automation. It forbids pretending that a rising value-added line is proof the plant is under control. IVA can rise while scrap, escapes, and downtime still own the week.</p>
+<p>Keep expenditure and food product manufacturing earnings distinct. They happen to share a growth rate, not a meaning. Mixing them in a slide is how rooms get fake confidence. The IVA lift is real and uneven. A plant outside that earnings engine should not borrow food's story as comfort. A plant inside it should not treat earnings strength as permission to leave changeover and quality gates unnamed. Either way, the unit on the floor still has to be chosen.</p>
+<p>Reported AI use does not close the gap by itself. The size split is already in the box. A tick-box is not line control. A licence can land while inspection minutes and changeover stay exactly where they were.</p>
+<p>Thin share of GDP means less volume to absorb scrap and stoppages. Customer risk arrives faster. Habit lines kept "just in case" cost more than leaders admit when the national manufacturing cushion is thin. Peers with thicker manufacturing shares can hide more waste inside volume. Australia cannot. That is why a European install decline does not license local complacency. Thick bases adjust timing. Thin bases pay faster for uncontrolled hours.</p>
+<p>Put the contrast in one sentence. Peers and customers are living compounding stock, shifting robot demand, and tighter process expectations, while Australian manufacturing can look cash-healthy in value-added terms and still be less productive, more expensive to run on wages, and thinly cushioned at the national level.</p>
 <p>A practical test for leadership: can someone who was not in the last CapEx meeting restate, in one minute, which unit is owned this quarter, who owns it, and what number will be reviewed on which date? If not, the climate in the boxes has not reached the calendar. Climate without calendar is conversation. Conversation without a unit is how thin-share manufacturers donate hours to competitors whose stock already compounds.</p>
-<p>That is not a funeral narrative. It is a warning against treating &quot;the sector looks fine&quot; as a plant control story. It requires naming a unit on the floor. Plants that keep debating national mood while scrap stays undefined are volunteering to learn last. Plants that pick one series for sixty days are using the IVA window while it still exists. The window is not a medal. It is a funding climate that can close.</p>
-<p>Contrast with China again, carefully. The point is not to copy another country&#x27;s density. The point is that a supplier loop with high domestic share and huge stock creates maintenance skill and uptime norms that travel through trade even when your plant never relocates. Ignoring that loop because &quot;we are not them&quot; is how &quot;different market&quot; becomes a substitute for baseline work.</p>
-<p>#### 3. One CapEx decision</p>
+<p>That is not a funeral narrative. It is a warning against treating "the sector looks fine" as a plant control story. Plants that keep debating national mood while scrap stays undefined are volunteering to learn last. Plants that pick one series for sixty days are using the IVA window while it still exists. The window is not a medal. It is a funding climate that can close.</p>
+<p>None of this is an argument for buying a cell this week without a number. It is an argument against using national mood as a substitute for a dated series. The IVA window can fund a baseline and a sequenced cell. It cannot fund a story. If leadership wants to wait, wait with a named unit and an honest cost. Waiting with no unit is not prudence. It is unnamed variance with better catering.</p>
+<h3 class="essay-sub">3 · One CapEx decision</h3>
 <p>The operating response is one decision, not a programme catalogue.</p>
 <p>Pick one unit for the leadership agenda for thirty to sixty days: scrap, inspection minutes, changeover, or unplanned downtime. Name an owner who already lives that unit on the line. Collect a baseline finance can restate with the same definition, the same window, and the same people collecting it. Only then open CapEx on sensing, vision, industrial robotics, or process, sized to the baseline. No owner, no baseline, no pilot. No vendor-owned IP by default.</p>
-<p>That sequence is the whole method. It does not need twelve sermons. It needs enforcement. A density chart without an owner is entertainment. A vendor demo without a baseline is a souvenir. A software licence without a physical unit is a catalogue purchase. A &quot;different market&quot; veto that skips the sequence is delay dressed as strategy. In a year when Australian manufacturing IVA rose while manufacturing MFP fell, delay is expensive: the cash-flow window is open while proof on a given line is still optional.</p>
-<p>Why one unit, not five? Because five units recreate a programme. Programmes expand. Owners compress. An owner of scrap on a named line has to face last week&#x27;s kilos. A steering pack can absorb every theme in the six boxes and still touch no line. Compression is the point. When German automotive robot installs can fall <strong>25%</strong> in a thick auto economy while food and beverage and metal/machinery demand rise globally, the useful local question is not &quot;are we automotive enough?&quot; It is &quot;which quality gate or changeover on our floor hurts enough to own for sixty days?&quot;</p>
-<p>Finance will usually sign a boring pack faster than a glamorous one. Boring means: unit named, window dated, owner named, IFR-class definition enforced, ask sized to baseline. Glamour means: cell tour, country chart, no owner. Glamour loses when wages and expenditure are up, productivity is down, and GDP share is thin. Boring wins when the ask is &quot;stop paying this dated series.&quot;</p>
+<p>That sequence is the whole method. It needs enforcement, not twelve sermons. A density chart without an owner is entertainment. A vendor demo without a baseline is a souvenir. A software licence without a physical unit is a catalogue purchase. A "different market" veto that skips the sequence is delay dressed as strategy. In a year when Australian manufacturing value added rose while manufacturing multifactor productivity fell, delay is expensive: the cash-flow window is open while proof on a given line is still optional.</p>
+<p>Why one unit, not five? Because five units recreate a programme. Programmes expand. Owners compress. An owner of scrap on a named line has to face last week's kilos. A steering pack can absorb every theme in the six boxes and still touch no line. Compression is the point. When automotive demand can fall in a thick auto economy while food and beverage and metal/machinery demand rise globally, the useful local question is not "are we automotive enough?" It is "which quality gate or changeover on our floor hurts enough to own for sixty days?"</p>
+<p>Finance will usually sign a boring pack faster than a glamorous one. Boring means: unit named, window dated, owner named, IFR-class definition enforced, ask sized to baseline. Glamour means: cell tour, country chart, no owner. Glamour loses when wages and expenditure are up, productivity is down, and GDP share is thin. Boring wins when the ask is "stop paying this dated series."</p>
 <p>If the baseline cannot be restated in one short note, it is not a baseline.</p>
 <p>Worked example, without theatre. Suppose changeover on a high-mix cell is the unit. Week one: define changeover minutes the same way every shift, write the IFR-class robot definition into the CapEx brief, name the cell owner. Weeks two to five: collect the series with the people who run the changeovers. Week six: one page for finance, restating definition, window, owner, and the number. Only then discuss vision, sensing, or an industrial cell sized to that bottleneck. If a vendor meeting happens before week six, it is optional colour, not a decision gate.</p>
-<p>The same template works for scrap kilos, inspection minutes, or unplanned downtime. The template does not change because China is dense, because electronics edged automotive, or because food and beverage installs jumped. Those facts explain why waiting is costly. They do not replace the unit.</p>
-<p>Notice what this decision refuses. It refuses five simultaneous &quot;transformation&quot; workstreams. It refuses a pilot whose success rule is &quot;we learned a lot.&quot; It refuses AI spend that cannot point at the same unit. It refuses country slides as substitutes for the one-page baseline. That is selectivity, not negativity. Thin GDP share and a soft productivity year are exactly when selectivity pays. Ninety days is enough to prove seriousness and short enough to prevent a programme disguise. Days one to three: unit and owner. Days four to thirty: baseline on the line. Days thirty-one to sixty: finance note. Days sixty-one to ninety: capital or process sized to the number. If someone asks for a parallel &quot;AI workstream&quot; with no link to the unit, park it. If someone asks for a second unit before the first baseline exists, refuse. Selectivity is how a thin-share manufacturer stays competitive without pretending it has surplus volume to burn.</p>
-<p>If the robot definition in the pack drifts into chatbot language, the pack is not speaking the IFR series above. If the pilot has photos and no decision rule after six months, it was theatre. Kill it and return to the unit.</p>
-<p>#### 4. Close</p>
-<p>This week on the floor is concrete. Name the unit and the date. Run the thirty-to-sixty-day baseline with the people on the line. Then size capital to the evidence. If plans still assume last year&#x27;s plant, say so out loud and change the pack.</p>
-<p>One more clarity check before the close. Expenditure <strong>+7.8%</strong> (A$38.3bn) and food product earnings <strong>+7.8%</strong> (A$815m) share a percentage and not a meaning. Mixing them in a slide is how rooms get fake confidence. Keep series labels glued to values, years, and sources the way the boxes above do. The same discipline applies to industrial robot language: IFR-class floor work only.</p>
-<p>The six figures already labelled the climate: stock versus flat installs, China process pressure, a buyer mix that left the old auto map, Australian IVA without a productivity gift, and a thin manufacturing share of GDP. The study&#x27;s job is not to replay those labels. It is to force one operating response before the installed base elsewhere compounds another quarter.</p>
-<p>Read the boxes for the labelled facts. Read this study for the operating argument. If the two disagree in a meeting pack, the pack is wrong, not the floor. Tempo is local, owned, and dated. Brochures are optional.</p>
-<p>the competitive risk this week is not missing the next robot brochure; it is running an unnamed line while the installed base elsewhere compounds, buyer mix shifts toward general industry and food, and Australian manufacturing cash-flow looks healthier than its productivity. Name the unit. Own the baseline. Sequence the capital. Everything else is theatre.</p>
-<div class="cta"><p class="tag">Computer Vision | Machine Learning | Robotics</p><p>Turnkey Computer Vision | Machine Learning | Robotics lines, vendor-agnostic, IP stays with you. A plant to modernise? Reply to this email.</p></div>
+<p>Notice what this decision refuses. It refuses five simultaneous "transformation" workstreams. It refuses a pilot whose success rule is "we learned a lot." It refuses AI spend that cannot point at the same unit. It refuses country slides as substitutes for the one-page baseline. That is selectivity, not negativity. Thin GDP share and a soft productivity year are exactly when selectivity pays.</p>
+<p>Use ninety days to prove seriousness without letting the work become a programme. Name the unit and owner in the first three days, hold the baseline through day thirty, give finance its note by day sixty, then size the response by day ninety. If someone asks for a parallel "AI workstream" with no link to the unit, park it. If someone asks for a second unit before the first baseline exists, refuse. Selectivity is how a thin-share manufacturer stays competitive without pretending it has surplus volume to burn.</p>
+<p>High-mix cells make that question sharper. Changeover minutes, hygiene holds, and mixed-pack quality gates are where general-industry demand is already voting, and they are also where unnamed time hides. A plant that still uses last year's automotive tour as its mental map will fund the wrong argument and miss the line that actually hurts. Pick the painful gate. Date it. Own it. The climate already explained why waiting is costly. The cell does not need another league table to get started.</p>
+<h3 class="essay-sub">4 · Close</h3>
+<p>This week on the floor is concrete. Name the unit and the date. Run the thirty-to-sixty-day baseline with the people on the line. Then size capital to the evidence. If plans still assume last year's plant, say so out loud and change the pack.</p>
+<p>The six figures already labelled the climate. The study's job is to force one operating response before the installed base elsewhere compounds another quarter. Read the boxes for the labelled facts. Read this study for the operating argument. If the two disagree in a meeting pack, the pack is wrong, not the floor. Tempo is local, owned, and dated. Brochures are optional.</p>
+<p>If this study has one job beyond the boxes, it is to stop the room from treating a labelled climate as wallpaper. The figures already did the labelling. The next hour of leadership time is worth more on one owned series than on another tour of the same six numbers.</p>
+<p>Opinion: the competitive risk this week is not missing the next robot brochure; it is running an unnamed line while the installed base elsewhere compounds, buyer mix shifts toward general industry and food, and Australian manufacturing cash-flow looks healthier than its productivity. Name the unit. Own the baseline. Sequence the capital. Everything else is theatre.</p>
+<div class="cta"><p class="tag">Computer Vision | Machine Learning | Robotics</p><p>Turnkey <strong>Computer Vision | Machine Learning | Robotics</strong> lines, vendor-agnostic, IP stays with you. A plant to modernise? Reply to this email.</p></div>
 </section>
 
 <aside class="score" aria-label="Happiness score" data-score-key="nl-score-2026-W37">
@@ -639,7 +733,6 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
   </div>
   <script>
     (function () {
-      var bar = document.getElementById("read-progress");
       var rt = document.getElementById("read-time");
       function words() {
         var root = document.querySelector(".wrap");
@@ -647,14 +740,7 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
       }
       var mins = Math.max(1, Math.round(words() / 200));
       if (rt) rt.textContent = mins + " min read";
-      function onScroll() {
-        var el = document.documentElement;
-        var max = el.scrollHeight - el.clientHeight;
-        var pct = max > 0 ? (el.scrollTop / max) * 100 : 0;
-        if (bar) bar.style.width = pct + "%";
-      }
-      
-      // one open at a time
+
       var boxes = Array.prototype.slice.call(document.querySelectorAll("details.box"));
       boxes.forEach(function (d) {
         d.addEventListener("toggle", function () {
@@ -663,20 +749,6 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         });
       });
 
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-      // accordion: optional localStorage
-      var key = "nl-open-2026-W37";
-      try {
-        var saved = JSON.parse(localStorage.getItem(key) || "{}");
-        document.querySelectorAll("details.box").forEach(function (d) {
-          if (saved[d.id]) d.open = true;
-          d.addEventListener("toggle", function () {
-            saved[d.id] = d.open;
-            try { localStorage.setItem(key, JSON.stringify(saved)); } catch (e) {}
-          });
-        });
-      } catch (e) {}
       var box = document.querySelector("[data-score-key]");
       if (box) {
         var skey = box.getAttribute("data-score-key");
@@ -698,16 +770,6 @@ Industrial robot, in this edition, means an IFR-class programmable arm or cell o
         });
       }
     })();
-
-      // exclusive accordion
-      document.querySelectorAll("details.box").forEach(function (d) {
-        d.addEventListener("toggle", function () {
-          if (!d.open) return;
-          document.querySelectorAll("details.box").forEach(function (o) {
-            if (o !== d) o.open = false;
-          });
-        });
-      });
   </script>
 </body>
 </html>
