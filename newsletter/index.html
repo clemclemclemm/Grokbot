@@ -1,181 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Corematic — Six numbers you rarely see</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+3:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!-- PT Mono only from Google; Adam + Sofia Pro are licensed brand fonts (ASSET/02 - POLICE/). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --yellow: #ffbd00;
-      --white: #ffffff;
+      --yellow: #FFBD00;
       --ink: #181818;
-      --black: #000000;
+      --cream: #F3F0E8;
+      --surface: #F9F7F1;
+      --muted: rgba(24, 24, 24, 0.55);
+      --muted-2: rgba(24, 24, 24, 0.38);
+      --line: rgba(24, 24, 24, 0.08);
+      --shadow-out: 10px 10px 24px rgba(24, 24, 24, 0.10);
+      --shadow-in-light: -7px -7px 18px rgba(255, 255, 255, 0.85);
+      --radius: 18px;
+      --page-pad: 20px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      background: var(--ink);
-      color: var(--white);
-      font-family: "Source Sans 3", "Sofia Pro", Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Sofia Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
+
     .page {
       max-width: 920px;
       margin: 0 auto;
-      padding: 48px 24px 72px;
+      padding: 28px var(--page-pad) 56px;
     }
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--yellow);
-      margin: 0 0 12px;
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
     }
-    h1 {
-      font-family: "Bebas Neue", Adam, Impact, sans-serif;
-      font-weight: 400;
-      font-size: clamp(42px, 8vw, 64px);
-      letter-spacing: 0.04em;
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--surface);
+      box-shadow: var(--shadow-out), var(--shadow-in-light);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-mark span {
+      width: 14px;
+      height: 14px;
+      background: var(--yellow);
+      clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+    }
+
+    .brand-name {
+      font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin: 0;
-      line-height: 0.95;
-      color: var(--white);
     }
+
+    .eyebrow {
+      font-family: "PT Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 3px;
+      background: var(--yellow);
+      margin-right: 10px;
+      vertical-align: middle;
+      border-radius: 1px;
+    }
+
+    h1 {
+      font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
+      font-weight: 700;
+      font-size: clamp(32px, 9vw, 52px);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 0.98;
+      color: var(--ink);
+    }
+
     .lede {
-      margin: 18px 0 0;
-      max-width: 36em;
-      font-size: 18px;
-      color: rgba(255,255,255,0.78);
+      margin: 14px 0 0;
+      max-width: 34em;
+      font-size: 16px;
+      color: var(--muted);
     }
+
     .rule {
       border: none;
-      border-top: 1px solid rgba(255,189,0,0.35);
-      margin: 36px 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--yellow), transparent 70%);
+      margin: 28px 0;
+      opacity: 0.85;
     }
+
+    /* Mobile-first grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
-    @media (max-width: 720px) {
-      .grid { grid-template-columns: 1fr; }
+
+    @media (min-width: 560px) {
+      .grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .page { padding: 40px 28px 64px; }
+      .lede { font-size: 17px; }
     }
+
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+    }
+
     .card {
-      background: var(--black);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-top: 3px solid var(--yellow);
-      padding: 22px 20px 24px;
+      position: relative;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: 20px 18px 22px;
       min-height: 100%;
+      box-shadow: var(--shadow-out), var(--shadow-in-light);
+      transition:
+        transform 0.28s var(--ease),
+        box-shadow 0.28s var(--ease),
+        border-color 0.28s var(--ease);
+      overflow: hidden;
+      isolation: isolate;
     }
+
+    /* Soft yellow wash on interaction — dynamic UI, not flat stripe */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        120% 80% at 0% 0%,
+        rgba(255, 189, 0, 0.18),
+        transparent 55%
+      );
+      opacity: 0;
+      transition: opacity 0.28s var(--ease);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      width: 3px;
+      border-radius: 0 2px 2px 0;
+      background: var(--yellow);
+      transform: scaleY(0.35);
+      transform-origin: top;
+      transition: transform 0.32s var(--ease);
+      opacity: 0.85;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-5px);
+      border-color: rgba(255, 189, 0, 0.45);
+      box-shadow:
+        14px 16px 32px rgba(24, 24, 24, 0.12),
+        -8px -8px 20px rgba(255, 255, 255, 0.9),
+        0 10px 28px rgba(255, 189, 0, 0.16);
+    }
+
+    .card:hover::before,
+    .card:focus-within::before { opacity: 1; }
+
+    .card:hover::after,
+    .card:focus-within::after { transform: scaleY(1); }
+
+    .card:active {
+      transform: translateY(-1px);
+      box-shadow:
+        inset 4px 4px 10px rgba(24, 24, 24, 0.08),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.7);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card, .card::before, .card::after { transition: none; }
+      .card:hover, .card:focus-within { transform: none; }
+    }
+
     .stat {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: clamp(28px, 4vw, 34px);
-      color: var(--yellow);
+      font-size: clamp(26px, 7vw, 32px);
+      color: var(--ink);
       margin: 0;
       line-height: 1.15;
+      letter-spacing: -0.02em;
     }
+
+    .stat .accent { color: var(--yellow); }
+
     .stat-sub {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
+      font-size: 11px;
+      color: var(--muted-2);
       margin: 8px 0 0;
       letter-spacing: 0.02em;
+      line-height: 1.4;
     }
+
     .comment {
-      margin: 14px 0 0;
-      font-size: 15px;
-      color: rgba(255,255,255,0.82);
+      margin: 12px 0 0;
+      font-size: 14px;
+      color: rgba(24, 24, 24, 0.78);
     }
+
     .cta {
-      margin-top: 40px;
-      padding: 28px 24px;
-      background: var(--black);
-      border: 1px solid rgba(255,189,0,0.4);
+      margin-top: 28px;
+      padding: 24px 20px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 189, 0, 0.35);
+      box-shadow: var(--shadow-out), var(--shadow-in-light);
+      position: relative;
     }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--yellow);
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
     .cta-brand {
-      font-family: "Bebas Neue", Adam, Impact, sans-serif;
+      font-family: Adam, "Arial Narrow", "Helvetica Neue", sans-serif;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--yellow);
-      font-size: 20px;
+      color: var(--ink);
+      font-size: 18px;
       margin: 0;
     }
+
     .cta-tag {
       font-family: "PT Mono", ui-monospace, monospace;
-      font-size: 12px;
-      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      color: var(--muted);
       margin: 8px 0 0;
     }
+
     .cta p.body {
-      margin: 16px 0 0;
-      font-size: 16px;
-      color: rgba(255,255,255,0.88);
+      margin: 14px 0 0;
+      font-size: 15px;
+      color: rgba(24, 24, 24, 0.82);
       max-width: 40em;
     }
+
     footer {
-      margin-top: 28px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
+      margin-top: 22px;
+      font-size: 11px;
+      color: var(--muted-2);
+      line-height: 1.45;
     }
   </style>
 </head>
 <body>
   <main class="page">
+    <div class="brand-row" aria-hidden="false">
+      <div class="brand-mark" aria-hidden="true"><span></span></div>
+      <p class="brand-name">Corematic</p>
+    </div>
+
     <p class="eyebrow">Industry signal · Australia</p>
     <h1>Six numbers you rarely see</h1>
     <p class="lede">World → Australia. Not a pitch — a scan for leaders, finance and ops.</p>
-    <hr class="rule">
+
+    <hr class="rule" />
 
     <section class="grid" aria-label="Six industry numbers">
-      <article class="card">
-        <p class="stat">177 / 10k</p>
+      <article class="card" tabindex="0">
+        <p class="stat">177 <span class="accent">/</span> 10k</p>
         <p class="stat-sub">robots · manuf. employees · world · 2024 · IFR</p>
         <p class="comment">Global density rose again. Not automating now means benchmarking against yesterday’s plant.</p>
       </article>
 
-      <article class="card">
-        <p class="stat">3.2×</p>
+      <article class="card" tabindex="0">
+        <p class="stat">3.2<span class="accent">×</span></p>
         <p class="stat-sub">China density vs world · 567 ÷ 177 · 2024 · IFR</p>
         <p class="comment">Factories that win on exports already put robots at the centre. The gap with late movers shows up in productivity — not in decks.</p>
       </article>
 
-      <article class="card">
-        <p class="stat">Elec &gt; Auto</p>
+      <article class="card" tabindex="0">
+        <p class="stat">Elec <span class="accent">&gt;</span> Auto</p>
         <p class="stat-sub">128,899 vs 126,088 installs · 2024 · IFR</p>
         <p class="comment">In 2024, electronics overtook automotive again. Automation follows the supply chains that move — not only the historic plants.</p>
       </article>
 
-      <article class="card">
-        <p class="stat">3.2×</p>
+      <article class="card" tabindex="0">
+        <p class="stat">3.2<span class="accent">×</span></p>
         <p class="stat-sub">AU AI · large ÷ small/micro · ~35% ÷ ~11% · 2024–25 · ABS</p>
         <p class="comment">Only ~12% of Australian businesses use AI — but ~35% of large ones. The gap isn’t tech; it’s size. Mid-market sits in between.</p>
       </article>
 
-      <article class="card">
-        <p class="stat">+A$6.2bn</p>
+      <article class="card" tabindex="0">
+        <p class="stat"><span class="accent">+</span>A$6.2bn</p>
         <p class="stat-sub">AU manuf. IVA abs. · 141,973 − 135,724 m · ABS</p>
         <p class="comment">Australian manufacturing is still adding real value. The question isn’t whether industry exists here — it’s how fast the mid-market modernises.</p>
       </article>
 
-      <article class="card">
-        <p class="stat">5.4%</p>
+      <article class="card" tabindex="0">
+        <p class="stat">5.4<span class="accent">%</span></p>
         <p class="stat-sub">AU manuf. of GDP · 2024 · World Bank · vs DE 18.0% · CN 24.8%</p>
         <p class="comment">We’re not a factory economy. Every point of manufacturing productivity matters more: little volume, little room for inefficiency.</p>
       </article>
     </section>
 
-    <section class="cta">
+    <aside class="cta">
       <p class="cta-brand">Corematic</p>
       <p class="cta-tag">Computer Vision | Machine Learning | Robotics</p>
       <p class="body">We build turnkey lines — vendor-agnostic, IP stays with you. A plant to modernise? Just reply to this email.</p>
-    </section>
+    </aside>
 
     <footer>
-      Sources: IFR World Robotics 2025 Foreword · ABS · World Bank NV.IND.MANF.ZS<br>
+      Sources: IFR World Robotics 2025 Foreword · ABS · World Bank NV.IND.MANF.ZS<br />
       Ratios shown with transparent inputs. You’re receiving this as a Corematic contact.
     </footer>
   </main>
