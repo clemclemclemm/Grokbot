@@ -1,0 +1,56 @@
+Subject: Robots moved goods, not welds
+
+If CapEx still opens at the CNC, the pack is behind where professional robot volume already went.
+
+=== THE DECISION ===
+Treat aisle time and high-risk routine inspection as CapEx inputs this quarter, not culture. Measure one unit before you buy or rent another cell.
+
+=== WHAT CHANGED ===
+Three Phil-green signals from IFR 2024. Survey coverage: 944 service-robot producers, 333 in logistics.
+
+Brief 1 · Indoor logistics. 102,900 units in 2024, up 14% (IFR). Professional sales more than 199,000. Logistics led that survey window.
+
+Brief 2 · RaaS. Fleet grew 31% in 2024 to more than 24,500 units (IFR). Our reading: transport/logistics RaaS channel alone grew 42%, not all RaaS.
+
+Brief 3 · Inspection. Close to 2,800 units in 2024, up 2,476% from a tiny 2023 base of about 100 units (IFR).
+
+Chart: Bar chart: professional service robots sold in 2024 IFR survey window. Transportation and logistics 102,900 units (+14% YoY). Residual other professional applications more than 96,100, derived from more-than-199,000 professional floor minus logistics 102,900. Logistics led other professional applications in IFR 2024 survey units; residual is derived, not an IFR published category total.
+
+Sources: https://ifr.org/ifr-press-releases/news/service-robots-see-global-growth-boom · https://ifr.org/wr-service-robots
+
+=== WHY IT MATTERS ===
+CapEx rooms still picture "robots" as caged arms. Unit volume already sits in goods movement. Waiting for a quiet CapEx year answers ownership while fleets under contract scale. Plants that still send people into confined spaces for routine checks sit on the wrong side of a niche curve that just steepened.
+
+PME boss, plant chef, and fund share one ask: name the bottleneck in meters, waits, or inspection rounds before ownership.
+
+=== FIELD EVIDENCE ===
+Field evidence: deferred for public GitHub test (Clément 16 Sep 2026).
+
+=== WHAT COULD MAKE THIS WRONG ===
+One limit: close to 2,800 is the 2024 level, not the tiny base. The 2,476% rise is from a small 2023 denominator (implied ~100 units). A spike that steep from a niche can reverse. Treat it as direction against the people-default for high-frequency, high-risk routine checks, not a settled mass market.
+
+=== THREE QUESTIONS ===
+1. Which meters of indoor travel or forklift waits are still human by default, and who owns that series?
+2. Which bottleneck would you automate tomorrow if the balance sheet stayed light (buy, rent, or redesign)?
+3. Which inspection rounds are high-frequency, low-skill, and high-risk enough to try mobile sensing before another production robot?
+
+=== RECOMMENDED NEXT MOVE (90 DAYS) ===
+1. Days 1-3: name one unit (aisle meters, dock waits, or high-risk routine inspection) and one owner who already lives that work.
+2. Days 4-30: collect a baseline finance can restate the same way every shift.
+3. Days 31-60: one-page note; size buy, RaaS capacity, or flow redesign to the baseline only.
+4. Days 61-90: run or refuse the sized response; no second unit before the first baseline exists.
+
+=== SHORT REPORTAGE ===
+Indoor logistics already takes the volume seat in the IFR 2024 survey window. Start plant tours at goods-in and WIP aisles, not only at the CNC. If the board never measures meters walked or line-side starvation, it is blind to the category that already led professional unit sales.
+RaaS separates bottleneck from ownership. A light balance sheet does not excuse a missing unit. Prefer unit named, window dated, owner named, ask sized to evidence. Exit clauses, uptime, and data ownership are the live contract questions.
+Inspection belongs only as candidates: frequent, standardised, dangerous routine checks. Horizon demos sit on the web brief.
+Useful first. Measure once. Then buy, rent, or redesign.
+
+=== GO DEEPER ===
+View in browser: https://clemclemclemm.github.io/Grokbot/newsletter/
+IFR: https://ifr.org/ifr-press-releases/news/service-robots-see-global-growth-boom · https://ifr.org/wr-service-robots
+
+=== CTA ===
+View the full brief → https://clemclemclemm.github.io/Grokbot/newsletter/
+
+EMAIL-v1.2-test · TOKEN PROOF-144c66a2
