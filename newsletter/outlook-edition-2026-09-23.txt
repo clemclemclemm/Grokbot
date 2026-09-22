@@ -1,0 +1,64 @@
+Subject: Wages +5.2%. Headcount +0.2.
+
+ABS manufacturing: pay rose far faster than headcount while building CapEx fell and kit barely edged up.
+
+23 September 2026 · Executive intelligence note · Public GitHub test
+
+=== THE DECISION ===
+Treat wage intensity and CapEx mix as one board pack this quarter. Measure cost per head and buildings-versus-equipment before you approve another quiet CapEx year.
+
+=== WHAT CHANGED ===
+Three signals (access 2026-09-23):
+
+Brief 1 · Wages vs headcount (ABS). Manufacturing wages and salaries +5.2% ($3.8b) in FY 2024-25; employment +0.2% (+2,000); end-June 899,000 → 901,000 (Source fact, ABS Australian Industry). Derived: wage intensity per head about +5.0% ((1.052 / 1.002) - 1 ≈ 0.0499). Same release: IVA +4.6% to $141.973b; sales +6.9%; expenses +7.8%; EBITDA +1.6% ($753m) (Source fact, current-price). Food earnings (+7.8%, $815m) drive much of division EBITDA (context only).
+
+Brief 2 · Siemens / P&G line inspection. Visual Inspection Cockpit (VIC): scrap reduced 10 to 20% (product-dependent); deployments 5 to 10x faster than bespoke vision (Source fact: OEM + customer joint claim, WebWire Siemens, 17 Sep 2026). Stack: P&G models on Siemens Industrial Edge + Nvidia GPU PCs; PLC reject (Source fact: architecture).
+
+Brief 3 · CapEx buildings vs equipment (ABS). Manufacturing CapEx -5.0% YoY Jun qtr 2026 vs Jun qtr 2025; buildings -16.2%; equipment +1.6% YoY / +0.8% QoQ (Source fact, ABS Private New CapEx, SA chain volumes). Keep all-industry ICT swings out of this manuf story.
+
+Chart: ABS Australian Industry FY 2024-25: manufacturing wages and salaries up 5.2 percent; employment up 0.2 percent. Current-price; employment end-June stock. Optional note: Derived wage intensity per head about +5.0%. Siemens scrap % is not plotted (not ABS-comparable).
+
+Sources:
+ABS Australian Industry: https://www.abs.gov.au/statistics/industry/industry-overview/australian-industry/latest-release
+ABS Private New CapEx: https://www.abs.gov.au/statistics/economy/business-indicators/private-new-capital-expenditure-and-expected-expenditure-australia/latest-release
+WebWire Siemens/P&G VIC (17 Sep 2026): https://www.webwire.com/ViewPressRel.asp?aId=360626
+
+=== WHY IT MATTERS ===
+PME boss, plant chef, and fund share one squeeze: the wage bill climbs about twenty-six times faster than headcount while expenses outrun sales and EBITDA barely lifts. That is cost-intensity and automation ROI, not a shortage slogan.
+
+CapEx rooms that wait for a building cycle may miss a window where kit is flat-to-up while shells contract. Vision that cuts scrap only helps if sized to your line, not to a joint press range.
+
+=== FIELD EVIDENCE ===
+Field evidence: Deferred - Clément ship-now override 23 Sep 2026 (public GitHub).
+
+=== WHAT COULD MAKE THIS WRONG ===
+One limit: scrap 10 to 20% and commissioning 5 to 10x are a Siemens + P&G joint claim (channel / customer-reported), not an independent trial or an Australian plant norm.
+
+=== THREE QUESTIONS ===
+1. What is wage cost per head (or per unit) by shift for the last four quarters, restated the same way?
+2. In the next CapEx pack, are you funding a shell, funding kit, or freezing both while wage intensity rises?
+3. Which inspection or reject loop has a dated scrap series you own before you buy another vision stack?
+
+=== RECOMMENDED NEXT MOVE (90 DAYS) ===
+1. Days 1-3: name one unit (wage intensity, scrap escapes, or kit vs shell) and one owner.
+2. Days 4-30: baseline finance can restate; separate Source fact from vendor claim.
+3. Days 31-60: one-page note; size process, kit, or inspection pilot to the baseline only.
+4. Days 61-90: run or refuse; no second unit before the first baseline exists.
+
+=== SHORT REPORTAGE ===
+Manufacturing is paying more per head while headcount barely moves. Boards that only hear shortage or soft demand miss the ABS print: wages +5.2%, employment +0.2%, expenses ahead of sales, EBITDA barely up. Automation ROI starts there.
+
+The CapEx split is the second half of the same pack. Buildings -16.2% while equipment +1.6% means shells are contracting faster than kit. Waiting for a building cycle is a choice. So is buying kit against a dated bottleneck while wage intensity climbs.
+
+Siemens/P&G VIC is pressure, not the thesis: cameras and industrial AI rejecting at PLC speed with claimed scrap cuts. Useful only after your scrap series exists.
+
+=== GO DEEPER ===
+View in browser: https://clemclemclemm.github.io/Grokbot/newsletter/
+ABS Australian Industry: https://www.abs.gov.au/statistics/industry/industry-overview/australian-industry/latest-release
+ABS Private New CapEx: https://www.abs.gov.au/statistics/economy/business-indicators/private-new-capital-expenditure-and-expected-expenditure-australia/latest-release
+Siemens/P&G VIC (WebWire, 17 Sep 2026): https://www.webwire.com/ViewPressRel.asp?aId=360626
+
+=== CTA ===
+View the full brief → https://clemclemclemm.github.io/Grokbot/newsletter/
+
+EMAIL-2026-09-23-v1 · TOKEN PROOF-da8b4b32
