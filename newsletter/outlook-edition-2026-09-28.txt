@@ -1,0 +1,71 @@
+Subject: Cobots +7%. Industrial +11%.
+
+ABS: private NF businesses took $73.5b of credit while capital investment held at 25.1% of GDP. IFR: cobots grew slower than industrial robots for the first time.
+
+28 September 2026 · Executive intelligence note · Public GitHub test
+
+=== THE DECISION ===
+Fund CapEx while credit still supports it, but do not treat cobots as the default growth cell. Size the next arm to metal and industrial install rates, not to a cobot slogan.
+
+=== CHART ===
+Cobot vs industrial install growth, 2025 (IFR WR2026)
+Industrial robot installations · +11% · Source fact (IFR)
+Collaborative robot installations · +7% · Source fact (IFR)
+Alt: IFR World Robotics 2026 (statistics year 2025): industrial robot installations up 11 percent; collaborative robot installations up 7 percent. Cobots 66,000 units, 11 percent of industrial installs.
+Optional note: metal and machinery +22% (Source fact, same IFR report). Cognex deal size and ABS credit dollars not plotted (not IFR-comparable).
+
+=== WHAT CHANGED ===
+Three signals (access 2026-09-28):
+
+Brief 1 · Business credit (ABS). Other private non-financial corporations demanded $73.5b of credit in Jun qtr 2026: loans $43.8b, equity $23.6b, bonds $7.2b (Source fact, ABS Finance and Wealth). Derived: loans ≈ 59.6% (43.8 / 73.5). NFC investment +$9.2b to $90.8b; capital investment 25.1% of GDP (Source fact). No manuf cut. Not an all-time record (Mar 2022 private NF was $160.7b).
+
+Brief 2 · Cognex / RealSense (OEM). Cognex agreed (22 Sep 2026) to buy RealSense for about US$500m cash; expected close Q4 2026 (Source fact: OEM deal terms, Cognex PR). RealSense 2026 revenue outlook US$80-90m; Cognex cites robotic perception ~US$600m today to ~US$1.6b by 2030 (Source fact: OEM forward / market estimate).
+
+Brief 3 · Cobots lag industrial (IFR). Industrial installs 603,000 (+11%); stock 5.079 million (+9%); new cobots 66,000 (= 11% of industrial installs) at +7%, below the industrial market for the first time in IFR's cobot series (Source fact, IFR President Report / WR 2026, stats year 2025). Derived: gap 4 ppt (11 − 7). Metal and machinery +22%; electronics and automotive each +10% (Source fact).
+
+Sources:
+ABS Finance and Wealth: https://www.abs.gov.au/statistics/economy/national-accounts/australian-national-accounts-finance-and-wealth/latest-release
+Cognex PR (22 Sep 2026): https://www.prnewswire.com/news-releases/cognex-to-acquire-realsense-expanding-machine-vision-leadership-into-high-growth-robotic-perception-market-302885738.html
+IFR President Report (24 Sep 2026): https://ifr.org/ifr-press-releases/news/presidents-report-by-jane-heffner-3-2026
+
+=== WHY IT MATTERS ===
+PME boss, plant chef, and fund share one CapEx question: is funding open, and which cell type is growing?
+
+Private non-financial credit is loan-heavy while capital formation stays about a quarter of GDP. That is a kit funding window, not a household-mortgage story.
+
+Cobots are no longer the fastest industrial story. Metal and machinery lead at +22%. Collaborative-by-default bets against the IFR mix. Cognex buying depth sensing is CapEx pressure, not proof your plant needs it yet.
+
+=== FIELD EVIDENCE ===
+Field evidence: Deferred - Clément ship-now override 28 Sep 2026 (public GitHub).
+
+=== WHAT COULD MAKE THIS WRONG ===
+One limit: Cognex-RealSense is a definitive agreement not yet closed (expected Q4 2026, customary conditions). Market size, growth rates, and RealSense 2026 revenue are OEM claims / estimates, not an independent AU plant trial or scrap series.
+
+=== THREE QUESTIONS ===
+1. For the next CapEx pack, what share of kit spend is funded by loans vs equity vs cash, restated the same way as last year?
+2. Of open cell projects, how many are collaborative by default versus traditional industrial or metal-line arms?
+3. Which perception or reject loop has a dated scrap or escape series you own before you buy another depth stack?
+
+=== RECOMMENDED NEXT MOVE (90 DAYS) ===
+1. Days 1-3: name one unit (credit mix for kit, cobot vs industrial share of open RFQs, or perception escapes) and one owner.
+2. Days 4-30: baseline finance and ops can restate; separate Source fact from OEM deal claims.
+3. Days 31-60: one-page note; size arm mix or perception pilot to that baseline only.
+4. Days 61-90: run or refuse; no second unit before the first baseline exists.
+
+=== SHORT REPORTAGE ===
+Private non-financial businesses took $73.5b of credit in the June quarter while capital investment held at 25.1% of GDP. Boards that only hear household mortgages miss the ABS print: lenders and equity still fund corporate CapEx.
+
+IFR closes the pack. Cobots +7% while industrial installs +11%, with metal and machinery +22%, means collaborative is no longer the automatic growth bet. Size industrial or metal cells to dated bottlenecks while funding is open.
+
+Cognex-RealSense is pressure, not the thesis. Useful only after your scrap series exists, and after the deal closes.
+
+=== GO DEEPER ===
+View in browser: https://clemclemclemm.github.io/Grokbot/newsletter/
+ABS Finance and Wealth: https://www.abs.gov.au/statistics/economy/national-accounts/australian-national-accounts-finance-and-wealth/latest-release
+Cognex-RealSense (PR Newswire, 22 Sep 2026): https://www.prnewswire.com/news-releases/cognex-to-acquire-realsense-expanding-machine-vision-leadership-into-high-growth-robotic-perception-market-302885738.html
+IFR President Report (24 Sep 2026): https://ifr.org/ifr-press-releases/news/presidents-report-by-jane-heffner-3-2026
+
+=== CTA ===
+View the full brief → https://clemclemclemm.github.io/Grokbot/newsletter/
+
+EMAIL-2026-09-28-v1 · TOKEN PROOF-fe80f03c
